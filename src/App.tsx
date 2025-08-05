@@ -6,7 +6,6 @@ import { Hero } from './components/Hero';
 import { InteractivePanel } from './components/InteractivePanel';
 import { Footer } from './components/Footer';
 import { ParticleBackground } from './components/ParticleBackground';
-import FlyingEmojis from './components/FlyingEmojis';
 import { CursorTrail } from './components/CursorTrail';
 import { CursorTracker } from './components/CursorTracker';
 
@@ -14,10 +13,9 @@ function App() {
   return (
     <LanguageProvider>
       <AuthProvider>
-        <div className="min-h-screen bg-gradient-to-br from-white from-70% to-brand-pink to-100% relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-white from-50% to-brand-pink to-100% relative overflow-hidden">
           {/* Particle animation background */}
           <ParticleBackground />
-          <FlyingEmojis />
           
           {/* Cursor trail effect */}
           <CursorTrail />

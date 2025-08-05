@@ -367,7 +367,7 @@ export const InteractivePanel: React.FC = () => {
         {/* Input Panel */}
         <div className="max-w-4xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className={`backdrop-blur-md bg-white/50 border border-white/20 rounded-2xl p-4 sm:p-6 lg:p-8 relative overflow-hidden ${meowMode ? 'meow-mode-active' : ''}`}>
+            <div className={`backdrop-blur-lg bg-white/30 border border-white/40 rounded-2xl p-4 sm:p-6 lg:p-8 relative overflow-hidden ${meowMode ? 'meow-mode-active' : ''}`}>
               {/* Мяу-режим огонек */}
               {meowMode && (
                 <div className="absolute inset-0 pointer-events-none">
@@ -524,7 +524,7 @@ export const InteractivePanel: React.FC = () => {
 
           {/* Results */}
           {(isLoading || result || selectedCards.length > 0) && (
-            <div className="mt-6 sm:mt-8 backdrop-blur-md bg-white/50 border border-white/20 rounded-2xl p-4 sm:p-6 lg:p-8">
+            <div className="mt-6 sm:mt-8 backdrop-blur-lg bg-white/30 border border-white/40 rounded-2xl p-4 sm:p-6 lg:p-8">
               <h4 className="text-lg sm:text-xl font-semibold text-brand-dark mb-4">{t('interactive.results.title')}</h4>
               
               {/* Отображение выбранных карт таро */}
