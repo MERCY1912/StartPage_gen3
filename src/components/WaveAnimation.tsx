@@ -20,22 +20,24 @@ const WaveAnimation: React.FC = () => {
 
     const drawWaves = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.lineWidth = 2;
-      ctx.strokeStyle = 'rgba(255, 192, 203, 0.2)'; // Pink color
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = 'rgba(255, 192, 203, 0.16)'; // Pink color with 20% less opacity
 
-      const waveCount = 10;
+      const waveCount = 15;
       for (let i = 0; i < waveCount; i++) {
         ctx.beginPath();
-        const amplitude = 40 + i * 20;
-        const frequency = 0.005 + i * 0.001;
-        const yOffset = canvas.height / 2 + (i - (waveCount - 1) / 2) * 60;
+        const amplitude = 50 + i * 20;
+        const frequency = 0.004 + i * 0.0005;
+        const yOffset = (i - (waveCount - 1) / 2) * 80;
 
-        for (let x = -100; x < canvas.width + 100; x++) {
+        for (let x = -canvas.width; x < canvas.width * 2; x++) {
           const y = Math.sin(x * frequency + frame * 0.02 + i * 0.5) * amplitude;
-          const rotation = Math.PI / 4; // 45 degrees
-          const rotatedX = x * Math.cos(rotation) - y * Math.sin(rotation);
-          const rotatedY = x * Math.sin(rotation) + y * Math.cos(rotation);
-          ctx.lineTo(rotatedX + canvas.width / 4, rotatedY + yOffset);
+
+          // The rotation is applied here to move from top-left to bottom-right
+          const diagonalX = x + y - yOffset;
+          const diagonalY = (x - y + yOffset) / 2;
+
+          ctx.lineTo(diagonalX, diagonalY);
         }
         ctx.stroke();
       }
