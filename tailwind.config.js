@@ -3,11 +3,19 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        'brand-pink': '#FBC2DB',
+        'brand-rose': '#E985A5',
+        'brand-purple': '#C5A3FF',
+        'brand-light': '#FEF6F9',
+        'brand-dark': '#3B2B42',
+        'brand-text': '#594255',
+      },
       screens: {
         'xs': '475px',
       },
       fontFamily: {
-        'serif': ['Playfair Display', 'serif'],
+        'serif': ['Nunito', 'serif'],
         'sans': ['Inter', 'sans-serif'],
       },
       animation: {
@@ -35,8 +43,8 @@ export default {
         xs: '2px',
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(147, 197, 253, 0.3)',
-        'glow-purple': '0 0 20px rgba(168, 85, 247, 0.3)',
+        'glow': '0 0 20px rgba(251, 194, 219, 0.4)',
+        'glow-purple': '0 0 20px rgba(197, 163, 255, 0.4)',
       }
     },
   },

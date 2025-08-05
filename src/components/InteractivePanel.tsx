@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Moon, Star, Zap, Send, Loader2, Cat, Copy, Check, CalendarDays, MessageSquareQuote, History, HelpCircle } from 'lucide-react';
+import { Send, Loader2, Cat, Copy, Check, HelpCircle, Sun, BrainCircuit, Shirt, HeartHandshake, Sparkles, Coffee } from 'lucide-react';
 import { UsageTracker, UsageData } from '../utils/usageTracker';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -17,52 +17,53 @@ interface Service {
 
 const getServices = (): Service[] => [
   {
-    id: 'dreams',
-    icon: Moon,
-    titleKey: 'interactive.services.dreams.title',
-    descriptionKey: 'interactive.services.dreams.description',
-    placeholderKey: 'interactive.services.dreams.placeholder'
+    id: 'daily-boost',
+    icon: Sun,
+    titleKey: 'interactive.services.dailyBoost.title',
+    descriptionKey: 'interactive.services.dailyBoost.description',
+    placeholderKey: 'interactive.services.dailyBoost.placeholder',
   },
   {
-    id: 'horoscope',
-    icon: Star,
-    titleKey: 'interactive.services.horoscope.title',
-    descriptionKey: 'interactive.services.horoscope.description',
-    placeholderKey: 'interactive.services.horoscope.placeholder'
+    id: 'ask-anything',
+    icon: BrainCircuit,
+    titleKey: 'interactive.services.askAnything.title',
+    descriptionKey: 'interactive.services.askAnything.description',
+    placeholderKey: 'interactive.services.askAnything.placeholder',
   },
   {
-    id: 'tarot',
-    icon: Zap,
-    titleKey: 'interactive.services.tarot.title',
-    descriptionKey: 'interactive.services.tarot.description',
-    placeholderKey: 'interactive.services.tarot.placeholder'
+    id: 'style-guide',
+    icon: Shirt,
+    titleKey: 'interactive.services.styleGuide.title',
+    descriptionKey: 'interactive.services.styleGuide.description',
+    placeholderKey: 'interactive.services.styleGuide.placeholder',
   },
   {
-    id: 'numerology',
-    icon: CalendarDays,
-    titleKey: 'interactive.services.numerology.title',
-    descriptionKey: 'interactive.services.numerology.description',
-    placeholderKey: 'interactive.services.numerology.placeholder'
+    id: 'heart-talk',
+    icon: HeartHandshake,
+    titleKey: 'interactive.services.heartTalk.title',
+    descriptionKey: 'interactive.services.heartTalk.description',
+    placeholderKey: 'interactive.services.heartTalk.placeholder',
   },
   {
-    id: 'oracle',
-    icon: MessageSquareQuote,
-    titleKey: 'interactive.services.oracle.title',
-    descriptionKey: 'interactive.services.oracle.description',
-    placeholderKey: 'interactive.services.oracle.placeholder'
+    id: 'glow-up-plan',
+    icon: Sparkles,
+    titleKey: 'interactive.services.glowUpPlan.title',
+    descriptionKey: 'interactive.services.glowUpPlan.description',
+    placeholderKey: 'interactive.services.glowUpPlan.placeholder',
   },
   {
-    id: 'regression',
-    icon: History,
-    titleKey: 'interactive.services.regression.title',
-    descriptionKey: 'interactive.services.regression.description',
-    placeholderKey: 'interactive.services.regression.placeholder'
-  }
+    id: 'tea-gossip',
+    icon: Coffee,
+    titleKey: 'interactive.services.teaGossip.title',
+    descriptionKey: 'interactive.services.teaGossip.description',
+    placeholderKey: 'interactive.services.teaGossip.placeholder',
+  },
 ];
+
 
 export const InteractivePanel: React.FC = () => {
   const { t } = useLanguage();
-  const [selectedService, setSelectedService] = useState<string>('dreams');
+  const [selectedService, setSelectedService] = useState<string>('daily-boost');
   const [input, setInput] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [result, setResult] = useState<string>('');
@@ -133,15 +134,15 @@ export const InteractivePanel: React.FC = () => {
 
   const getWebhookUrl = (serviceId: string, meowModeEnabled: boolean = false): string => {
     const webhookUrls = {
-     dreams: meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_DREAMS_MEOW : import.meta.env.VITE_N8N_WEBHOOK_DREAMS,
-     horoscope: meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_HOROSCOPE_MEOW : import.meta.env.VITE_N8N_WEBHOOK_HOROSCOPE,
-     tarot: meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_TAROT_MEOW : import.meta.env.VITE_N8N_WEBHOOK_TAROT,
-     numerology: meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_NUMEROLOGY_MEOW : import.meta.env.VITE_N8N_WEBHOOK_NUMEROLOGY,
-     oracle: meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_ORACLE_MEOW : import.meta.env.VITE_N8N_WEBHOOK_ORACLE,
-     regression: meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_REGRESSION_MEOW : import.meta.env.VITE_N8N_WEBHOOK_REGRESSION,
+      'daily-boost': meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_DAILY_BOOST_MEOW : import.meta.env.VITE_N8N_WEBHOOK_DAILY_BOOST,
+      'ask-anything': meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_ASK_ANYTHING_MEOW : import.meta.env.VITE_N8N_WEBHOOK_ASK_ANYTHING,
+      'style-guide': meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_STYLE_GUIDE_MEOW : import.meta.env.VITE_N8N_WEBHOOK_STYLE_GUIDE,
+      'heart-talk': meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_HEART_TALK_MEOW : import.meta.env.VITE_N8N_WEBHOOK_HEART_TALK,
+      'glow-up-plan': meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_GLOW_UP_PLAN_MEOW : import.meta.env.VITE_N8N_WEBHOOK_GLOW_UP_PLAN,
+      'tea-gossip': meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_TEA_GOSSIP_MEOW : import.meta.env.VITE_N8N_WEBHOOK_TEA_GOSSIP,
     };
     
-    return webhookUrls[serviceId as keyof typeof webhookUrls] || webhookUrls.dreams;
+    return webhookUrls[serviceId as keyof typeof webhookUrls] || webhookUrls['daily-boost'];
   };
 
   const sendToN8N = async (serviceId: string, userInput: string, tarotCardNames?: string[], meowModeEnabled?: boolean): Promise<string> => {
@@ -366,7 +367,7 @@ export const InteractivePanel: React.FC = () => {
         {/* Input Panel */}
         <div className="max-w-4xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className={`backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 lg:p-8 relative overflow-hidden ${meowMode ? 'meow-mode-active' : ''}`}>
+            <div className={`backdrop-blur-md bg-white/50 border border-white/20 rounded-2xl p-4 sm:p-6 lg:p-8 relative overflow-hidden ${meowMode ? 'meow-mode-active' : ''}`}>
               {/* Мяу-режим огонек */}
               {meowMode && (
                 <div className="absolute inset-0 pointer-events-none">
@@ -374,28 +375,28 @@ export const InteractivePanel: React.FC = () => {
                 </div>
               )}
               
-              <h3 className="text-xl sm:text-2xl font-serif font-semibold text-white mb-4 sm:mb-6 text-center">
+              <h3 className="text-xl sm:text-2xl font-serif font-semibold text-brand-dark mb-4 sm:mb-6 text-center">
                 {t('interactive.title')}
               </h3>
               
               {/* Тумблер Мяу-режима */}
               <div className="flex items-center justify-center mb-4 sm:mb-6">
                 <div className="flex items-center space-x-3">
-                  <Cat className={`w-5 h-5 transition-colors duration-300 ${meowMode ? 'text-sky-400' : 'text-slate-400'}`} />
-                  <span className="text-sm text-slate-300">{t('interactive.meowMode')}</span>
+                  <Cat className={`w-5 h-5 transition-colors duration-300 ${meowMode ? 'text-brand-rose' : 'text-brand-text/50'}`} />
+                  <span className="text-sm text-brand-text">{t('interactive.meowMode')}</span>
                   <div className="relative">
                     <button
                       type="button"
                       onMouseEnter={() => setShowMeowTooltip(true)}
                       onMouseLeave={() => setShowMeowTooltip(false)}
-                      className="text-slate-400 hover:text-slate-300 transition-colors duration-200"
+                      className="text-brand-text/60 hover:text-brand-text transition-colors duration-200"
                     >
                       <HelpCircle className="w-4 h-4" />
                     </button>
                     {showMeowTooltip && (
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-slate-800 border border-slate-600 rounded-lg text-xs text-slate-200 whitespace-nowrap shadow-lg z-50">
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-brand-dark/90 border border-brand-dark/20 rounded-lg text-xs text-brand-light whitespace-nowrap shadow-lg z-50">
                         {t('interactive.meowModeTooltip')}
-                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800"></div>
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-brand-dark/90"></div>
                       </div>
                     )}
                   </div>
@@ -407,8 +408,8 @@ export const InteractivePanel: React.FC = () => {
                       setResult(''); // Очищаем результат
                       setSelectedCards([]); // Очищаем выбранные карты
                     }}
-                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-sky-400/50 ${
-                      meowMode ? 'bg-sky-500' : 'bg-slate-600'
+                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-pink/50 ${
+                      meowMode ? 'bg-brand-rose' : 'bg-brand-text/30'
                     }`}
                   >
                     <span
@@ -434,12 +435,12 @@ export const InteractivePanel: React.FC = () => {
                 {services.map((service) => {
                   const Icon = service.icon;
                   const colors = {
-                    dreams: 'from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600',
-                    horoscope: 'from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600',
-                    tarot: 'from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600',
-                    numerology: 'from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600',
-                    oracle: 'from-violet-500 to-purple-500 hover:from-violet-600 hover:to-purple-600',
-                    regression: 'from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600'
+                    'daily-boost': 'from-brand-pink to-brand-rose hover:from-brand-pink/90 hover:to-brand-rose/90',
+                    'ask-anything': 'from-brand-purple to-brand-pink hover:from-brand-purple/90 hover:to-brand-pink/90',
+                    'style-guide': 'from-brand-rose to-brand-purple hover:from-brand-rose/90 hover:to-brand-purple/90',
+                    'heart-talk': 'from-brand-pink to-brand-purple hover:from-brand-pink/90 hover:to-brand-purple/90',
+                    'glow-up-plan': 'from-brand-rose to-brand-pink hover:from-brand-rose/90 hover:to-brand-pink/90',
+                    'tea-gossip': 'from-brand-purple to-brand-rose hover:from-brand-purple/90 hover:to-brand-rose/90',
                   };
                   
                   return (
@@ -455,7 +456,7 @@ export const InteractivePanel: React.FC = () => {
                       className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 transform hover:scale-105 flex items-center space-x-1 sm:space-x-2 ${
                         selectedService === service.id
                           ? `bg-gradient-to-r ${colors[service.id as keyof typeof colors]} text-white shadow-lg`
-                          : 'bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white'
+                          : 'bg-brand-light/20 text-brand-dark hover:bg-brand-light/40 hover:text-brand-dark'
                       }`}
                     >
                       <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -466,7 +467,7 @@ export const InteractivePanel: React.FC = () => {
               </div>
               
               <div className="space-y-4">
-                <p className="text-slate-400 text-center text-xs sm:text-sm mb-4 px-2">
+                <p className="text-brand-text/80 text-center text-xs sm:text-sm mb-4 px-2">
                   {t(currentService.descriptionKey)}
                 </p>
                 
@@ -474,14 +475,14 @@ export const InteractivePanel: React.FC = () => {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder={t(currentService.placeholderKey)}
-                  className="w-full h-24 sm:h-32 px-3 sm:px-4 py-2 sm:py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-slate-400 resize-none focus:outline-none focus:ring-2 focus:ring-pink-400/50 focus:border-transparent backdrop-blur-sm text-sm sm:text-base"
+                  className="w-full h-24 sm:h-32 px-3 sm:px-4 py-2 sm:py-3 bg-brand-light/20 border border-brand-pink/30 rounded-xl text-brand-dark placeholder-brand-text/50 resize-none focus:outline-none focus:ring-2 focus:ring-brand-rose/50 focus:border-transparent backdrop-blur-sm text-sm sm:text-base"
                   disabled={isLoading}
                 />
                 
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading || remaining === 0}
-                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-white rounded-xl font-semibold text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-purple-600 hover:via-pink-600 hover:to-blue-600 transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg shadow-pink-500/25 overflow-hidden group"
+                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-brand-rose to-brand-pink text-white rounded-xl font-semibold text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-brand-rose/90 hover:to-brand-pink/90 transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg shadow-brand-pink/30 overflow-hidden group"
                 >
                   {/* Звёздная пыль эффект */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -523,13 +524,13 @@ export const InteractivePanel: React.FC = () => {
 
           {/* Results */}
           {(isLoading || result || selectedCards.length > 0) && (
-            <div className="mt-6 sm:mt-8 backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 lg:p-8">
-              <h4 className="text-lg sm:text-xl font-semibold text-white mb-4">{t('interactive.results.title')}</h4>
+            <div className="mt-6 sm:mt-8 backdrop-blur-md bg-white/50 border border-white/20 rounded-2xl p-4 sm:p-6 lg:p-8">
+              <h4 className="text-lg sm:text-xl font-semibold text-brand-dark mb-4">{t('interactive.results.title')}</h4>
               
               {/* Отображение выбранных карт таро */}
               {selectedCards.length > 0 && (
                 <div className="mb-6">
-                  <h5 className="text-md font-medium text-purple-300 mb-3">{t('interactive.results.selectedCards')}</h5>
+                  <h5 className="text-md font-medium text-brand-rose mb-3">{t('interactive.results.selectedCards')}</h5>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                     {selectedCards.map((card, index) => (
                       <div 
@@ -548,9 +549,9 @@ export const InteractivePanel: React.FC = () => {
                               target.src = `https://via.placeholder.com/200x350/4c1d95/ffffff?text=${encodeURIComponent(card.displayName)}`;
                             }}
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <p className="text-xs sm:text-sm text-slate-300 mt-2 font-medium">
+                        <p className="text-xs sm:text-sm text-brand-text mt-2 font-medium">
                           {card.displayName}
                         </p>
                       </div>
@@ -561,14 +562,14 @@ export const InteractivePanel: React.FC = () => {
               
               {isLoading ? (
                 <div className="space-y-3">
-                  <div className="h-4 bg-gradient-to-r from-purple-400/20 via-pink-400/20 to-blue-400/20 rounded animate-pulse"></div>
-                  <div className="h-4 bg-gradient-to-r from-blue-400/20 via-emerald-400/20 to-purple-400/20 rounded animate-pulse"></div>
-                  <div className="h-4 bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-blue-400/20 rounded w-3/4 animate-pulse"></div>
+                  <div className="h-4 bg-gradient-to-r from-brand-pink/20 via-brand-rose/20 to-brand-purple/20 rounded animate-pulse"></div>
+                  <div className="h-4 bg-gradient-to-r from-brand-purple/20 via-brand-pink/20 to-brand-rose/20 rounded animate-pulse"></div>
+                  <div className="h-4 bg-gradient-to-r from-brand-rose/20 via-brand-purple/20 to-brand-pink/20 rounded w-3/4 animate-pulse"></div>
                 </div>
               ) : result && (
                 <>
                   <div 
-                    className="text-slate-300 leading-relaxed text-sm sm:text-base prose prose-invert max-w-none"
+                    className="leading-relaxed text-sm sm:text-base prose max-w-none"
                     dangerouslySetInnerHTML={{ __html: result }}
                   />
                   
@@ -576,12 +577,12 @@ export const InteractivePanel: React.FC = () => {
                   <div className="flex justify-center mt-4">
                     <button
                       onClick={handleCopyText}
-                      className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-slate-300 hover:text-white transition-all duration-200 flex items-center space-x-2 text-sm"
+                      className="px-4 py-2 bg-brand-light/30 hover:bg-brand-light/50 border border-brand-pink/30 rounded-lg text-brand-dark hover:text-brand-dark/90 transition-all duration-200 flex items-center space-x-2 text-sm"
                     >
                       {copySuccess ? (
                         <>
-                          <Check className="w-4 h-4 text-green-400" />
-                          <span className="text-green-400">{t('interactive.buttons.copied')}</span>
+                          <Check className="w-4 h-4 text-green-500" />
+                          <span className="text-green-500">{t('interactive.buttons.copied')}</span>
                         </>
                       ) : (
                         <>
