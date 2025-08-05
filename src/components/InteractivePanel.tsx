@@ -15,48 +15,43 @@ interface Service {
   placeholderKey: string;
 }
 
+import { Sprout, BookOpen, Sun, Coffee, Calendar } from 'lucide-react';
+
 const getServices = (): Service[] => [
   {
-    id: 'daily-boost',
+    id: 'morning-routine',
     icon: Sun,
-    titleKey: 'interactive.services.dailyBoost.title',
-    descriptionKey: 'interactive.services.dailyBoost.description',
-    placeholderKey: 'interactive.services.dailyBoost.placeholder',
+    titleKey: 'Утренний настрой',
+    descriptionKey: 'Начни свой день с позитивных аффирмаций и мотивации.',
+    placeholderKey: 'Хочу получить заряд бодрости на весь день...',
   },
   {
-    id: 'ask-anything',
-    icon: BrainCircuit,
-    titleKey: 'interactive.services.askAnything.title',
-    descriptionKey: 'interactive.services.askAnything.description',
-    placeholderKey: 'interactive.services.askAnything.placeholder',
+    id: 'daily-planner',
+    icon: Calendar,
+    titleKey: 'Планирование дня',
+    descriptionKey: 'Организуй свои задачи и расставь приоритеты.',
+    placeholderKey: 'Помоги мне спланировать мой день...',
   },
   {
-    id: 'style-guide',
-    icon: Shirt,
-    titleKey: 'interactive.services.styleGuide.title',
-    descriptionKey: 'interactive.services.styleGuide.description',
-    placeholderKey: 'interactive.services.styleGuide.placeholder',
+    id: 'self-care-idea',
+    icon: Sprout,
+    titleKey: 'Идея для заботы о себе',
+    descriptionKey: 'Найди время для себя с персональной рекомендацией.',
+    placeholderKey: 'Что я могу сделать для себя сегодня?',
   },
   {
-    id: 'heart-talk',
-    icon: HeartHandshake,
-    titleKey: 'interactive.services.heartTalk.title',
-    descriptionKey: 'interactive.services.heartTalk.description',
-    placeholderKey: 'interactive.services.heartTalk.placeholder',
+    id: 'book-suggestion',
+    icon: BookOpen,
+    titleKey: 'Книжная рекомендация',
+    descriptionKey: 'Получи совет, какую книгу почитать вечером.',
+    placeholderKey: 'Посоветуй мне книгу под настроение...',
   },
   {
-    id: 'glow-up-plan',
-    icon: Sparkles,
-    titleKey: 'interactive.services.glowUpPlan.title',
-    descriptionKey: 'interactive.services.glowUpPlan.description',
-    placeholderKey: 'interactive.services.glowUpPlan.placeholder',
-  },
-  {
-    id: 'tea-gossip',
+    id: 'coffee-break',
     icon: Coffee,
-    titleKey: 'interactive.services.teaGossip.title',
-    descriptionKey: 'interactive.services.teaGossip.description',
-    placeholderKey: 'interactive.services.teaGossip.placeholder',
+    titleKey: 'Кофе-брейк',
+    descriptionKey: 'Короткий перерыв с интересным фактом или мыслью.',
+    placeholderKey: 'Расскажи мне что-нибудь интересное...',
   },
 ];
 
@@ -376,7 +371,7 @@ export const InteractivePanel: React.FC = () => {
               )}
               
               <h3 className="text-xl sm:text-2xl font-serif font-semibold text-brand-dark mb-4 sm:mb-6 text-center">
-                {t('interactive.title')}
+                Выбери, чем заняться сегодня вместе с AI-ассистентом
               </h3>
               
               {/* Тумблер Мяу-режима */}
