@@ -7,9 +7,9 @@ export default {
         'brand-pink': '#FBC2DB',
         'brand-rose': '#E985A5',
         'brand-purple': '#C5A3FF',
-        'brand-light': '#FFF5F8',
-        'brand-dark': '#4D3C56',
-        'brand-text': '#6B506B',
+        'brand-light': '#FEF6F9',
+        'brand-dark': '#3B2B42',
+        'brand-text': '#594255',
       },
       screens: {
         'xs': '475px',
