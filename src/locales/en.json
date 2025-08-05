@@ -35,35 +35,35 @@
     "atmosphereMode": "Atmosphere",
     "atmosphereModeTooltip": "Enables mystical background music to create an atmosphere of ancient rituals and magical practices.",
     "services": {
-      "dreams": {
-        "title": "Dream Interpretation",
-        "description": "Reveal hidden meanings and symbols in your dreams through AI analysis.",
-        "placeholder": "Describe your dream in detail... What did you see, feel, or experience?"
+      "dailyBoost": {
+        "title": "Daily Boost",
+        "description": "Start your day with a positive affirmation, energy check-in, and friendly motivation.",
+        "placeholder": "Tell me something to get my day started..."
       },
-      "horoscope": {
-        "title": "Personal Horoscope",
-        "description": "Get personalized astrological insights based on your birth data.",
-        "placeholder": "Provide your birth date, time, location, or any other personal information for a personalized reading..."
+      "askAnything": {
+        "title": "Ask Anything",
+        "description": "Get advice or insights on relationships, work, emotions, beauty, or anything personal.",
+        "placeholder": "Ask a question about relationships, work, or something personal..."
       },
-      "tarot": {
-        "title": "Tarot Reading",
-        "description": "Receive guidance through mystical tarot card interpretations.",
-        "placeholder": "Ask a specific question or describe a situation you need advice about..."
+      "styleGuide": {
+        "title": "Style Guide",
+        "description": "Outfit suggestions based on mood, occasion, or season. Option to upload a photo.",
+        "placeholder": "I need an outfit for a first date..."
       },
-      "numerology": {
-        "title": "Numerology",
-        "description": "Discover the mysteries of numbers in your life through birth date and name analysis.",
-        "placeholder": "Enter your full name and birth date (e.g., John Smith, March 15, 1990)..."
+      "heartTalk": {
+        "title": "Heart Talk",
+        "description": "Vent, journal, or reflect. The AI listens, asks gentle questions, and offers comfort.",
+        "placeholder": "I need to talk about something that's on my mind..."
       },
-      "oracle": {
-        "title": "Oracle Question",
-        "description": "Receive wise answers from an ancient oracle on any life question.",
-        "placeholder": "Formulate your question about love, work, future, or any other area of life..."
+      "glowUpPlan": {
+        "title": "Glow Up Plan",
+        "description": "A personalized weekly plan for self-care, beauty, fitness, and mindset.",
+        "placeholder": "Create a glow-up plan for me for next week..."
       },
-      "regression": {
-        "title": "Past Life Regression",
-        "description": "Discover memories from past incarnations and their connection to the present.",
-        "placeholder": "Describe yourself, your life, interests, or simply write 'show me my past life'..."
+      "teaGossip": {
+        "title": "Tea & Gossip",
+        "description": "Fun, light-hearted mode: trending topics, celeb gossip, memes, quizzes, and more.",
+        "placeholder": "What's the latest gossip?"
       }
     },
     "buttons": {
