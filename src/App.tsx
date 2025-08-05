@@ -7,7 +7,6 @@ import { InteractivePanel } from './components/InteractivePanel';
 import { Footer } from './components/Footer';
 import { ParticleBackground } from './components/ParticleBackground';
 import WaveAnimation from './components/WaveAnimation';
-import FlyingEmojis from './components/FlyingEmojis';
 import { CursorTrail } from './components/CursorTrail';
 import { CursorTracker } from './components/CursorTracker';
 
@@ -19,7 +18,6 @@ function App() {
           {/* Particle animation background */}
           <ParticleBackground />
           <WaveAnimation />
-          <FlyingEmojis />
           
           {/* Cursor trail effect */}
           <CursorTrail />

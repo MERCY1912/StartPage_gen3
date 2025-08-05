@@ -367,7 +367,7 @@ export const InteractivePanel: React.FC = () => {
         {/* Input Panel */}
         <div className="max-w-4xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className={`backdrop-blur-md bg-white/50 border border-white/20 rounded-2xl p-4 sm:p-6 lg:p-8 relative overflow-hidden ${meowMode ? 'meow-mode-active' : ''}`}>
+            <div className={`backdrop-blur-xl bg-white/20 border border-white/30 rounded-2xl p-4 sm:p-6 lg:p-8 relative overflow-hidden shadow-lg ${meowMode ? 'meow-mode-active' : ''}`}>
               {/* Мяу-режим огонек */}
               {meowMode && (
                 <div className="absolute inset-0 pointer-events-none">
@@ -455,8 +455,8 @@ export const InteractivePanel: React.FC = () => {
                       }}
                       className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 transform hover:scale-105 flex items-center space-x-1 sm:space-x-2 ${
                         selectedService === service.id
-                          ? `bg-gradient-to-r ${colors[service.id as keyof typeof colors]} text-white shadow-lg`
-                          : 'bg-brand-light/20 text-brand-dark hover:bg-brand-light/40 hover:text-brand-dark'
+                          ? `bg-white/30 text-brand-dark shadow-lg border border-white/50 backdrop-blur-sm`
+                          : 'bg-white/10 text-brand-dark/70 hover:bg-white/20 hover:text-brand-dark border border-transparent hover:border-white/20'
                       }`}
                     >
                       <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -482,7 +482,7 @@ export const InteractivePanel: React.FC = () => {
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading || remaining === 0}
-                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-xl font-semibold text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-rose-600 hover:to-pink-600 transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg shadow-pink-500/40 overflow-hidden group"
+                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-white/30 text-brand-dark rounded-xl font-semibold text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/40 transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg border border-white/50 backdrop-blur-sm overflow-hidden group"
                 >
                   {/* Звёздная пыль эффект */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -524,7 +524,7 @@ export const InteractivePanel: React.FC = () => {
 
           {/* Results */}
           {(isLoading || result || selectedCards.length > 0) && (
-            <div className="mt-6 sm:mt-8 backdrop-blur-md bg-white/50 border border-white/20 rounded-2xl p-4 sm:p-6 lg:p-8">
+            <div className="mt-6 sm:mt-8 backdrop-blur-xl bg-white/20 border border-white/30 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg">
               <h4 className="text-lg sm:text-xl font-semibold text-brand-dark mb-4">{t('interactive.results.title')}</h4>
               
               {/* Отображение выбранных карт таро */}
