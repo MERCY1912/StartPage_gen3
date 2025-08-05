@@ -14,7 +14,7 @@ function App() {
   return (
     <LanguageProvider>
       <AuthProvider>
-        <div className="min-h-screen bg-gradient-to-br from-white to-brand-pink relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-white from-70% to-brand-pink to-100% relative overflow-hidden">
           {/* Particle animation background */}
           <ParticleBackground />
           <FlyingEmojis />

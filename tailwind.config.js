@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-pink': '#FF8FAB',
+        'brand-pink': '#FFC0CB',
         'brand-rose': '#F472B6',
         'brand-purple': '#D946EF',
         'brand-light': '#FDF2F8',

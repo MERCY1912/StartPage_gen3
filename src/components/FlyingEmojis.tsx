@@ -5,13 +5,14 @@ const FlyingEmojis: React.FC = () => {
 
   useEffect(() => {
     const generateEmojis = () => {
-      const newEmojis = Array.from({ length: 20 }).map((_, i) => {
+      const newEmojis = Array.from({ length: 40 }).map((_, i) => {
         const style = {
           left: `${Math.random() * 100}vw`,
           top: `${Math.random() * 100}vh`,
-          fontSize: `${Math.random() * 2 + 1}rem`,
-          animationDuration: `${Math.random() * 5 + 5}s`,
-          animationDelay: `${Math.random() * 5}s`,
+          fontSize: `${Math.random() * 0.5 + 0.5}rem`,
+          opacity: 0.5,
+          animationDuration: `${Math.random() * 10 + 10}s`,
+          animationDelay: `${Math.random() * 10}s`,
         };
         return (
           <div key={i} className="absolute animate-fly" style={style}>
