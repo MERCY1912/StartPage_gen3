@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-pink': '#FBC2DB',
-        'brand-rose': '#E985A5',
-        'brand-purple': '#C5A3FF',
-        'brand-light': '#FEF6F9',
-        'brand-dark': '#3B2B42',
-        'brand-text': '#594255',
+        'brand-pink': '#FF8FAB',
+        'brand-rose': '#F472B6',
+        'brand-purple': '#D946EF',
+        'brand-light': '#FDF2F8',
+        'brand-dark': '#1E1B1D',
+        'brand-text': '#4B4448',
       },
       screens: {
         'xs': '475px',

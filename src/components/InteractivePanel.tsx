@@ -435,12 +435,12 @@ export const InteractivePanel: React.FC = () => {
                 {services.map((service) => {
                   const Icon = service.icon;
                   const colors = {
-                    'daily-boost': 'from-brand-pink to-brand-rose hover:from-brand-pink/90 hover:to-brand-rose/90',
-                    'ask-anything': 'from-brand-purple to-brand-pink hover:from-brand-purple/90 hover:to-brand-pink/90',
-                    'style-guide': 'from-brand-rose to-brand-purple hover:from-brand-rose/90 hover:to-brand-purple/90',
-                    'heart-talk': 'from-brand-pink to-brand-purple hover:from-brand-pink/90 hover:to-brand-purple/90',
-                    'glow-up-plan': 'from-brand-rose to-brand-pink hover:from-brand-rose/90 hover:to-brand-pink/90',
-                    'tea-gossip': 'from-brand-purple to-brand-rose hover:from-brand-purple/90 hover:to-brand-rose/90',
+                    'daily-boost': 'from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500',
+                    'ask-anything': 'from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500',
+                    'style-guide': 'from-rose-400 to-purple-400 hover:from-rose-500 hover:to-purple-500',
+                    'heart-talk': 'from-pink-400 to-purple-400 hover:from-pink-500 hover:to-purple-500',
+                    'glow-up-plan': 'from-rose-400 to-pink-400 hover:from-rose-500 hover:to-pink-500',
+                    'tea-gossip': 'from-purple-400 to-rose-400 hover:from-purple-500 hover:to-rose-500',
                   };
                   
                   return (
@@ -482,7 +482,7 @@ export const InteractivePanel: React.FC = () => {
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading || remaining === 0}
-                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-brand-rose to-brand-pink text-white rounded-xl font-semibold text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-brand-rose/90 hover:to-brand-pink/90 transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg shadow-brand-pink/30 overflow-hidden group"
+                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-xl font-semibold text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-rose-600 hover:to-pink-600 transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg shadow-pink-500/40 overflow-hidden group"
                 >
                   {/* Звёздная пыль эффект */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
