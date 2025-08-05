@@ -20,24 +20,34 @@ const WaveAnimation: React.FC = () => {
 
     const drawWaves = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.lineWidth = 1.5;
-      ctx.strokeStyle = 'rgba(255, 192, 203, 0.16)'; // Pink color with 20% less opacity
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(255, 192, 203, 0.1)'; // Even more subtle pink
 
-      const waveCount = 15;
+      const waveCount = 4; // Reduced wave count
+      const cornerSize = Math.min(canvas.width, canvas.height) * 0.5;
+
+      // Top-left corner
       for (let i = 0; i < waveCount; i++) {
         ctx.beginPath();
-        const amplitude = 50 + i * 20;
-        const frequency = 0.004 + i * 0.0005;
-        const yOffset = (i - (waveCount - 1) / 2) * 80;
+        const amplitude = 20 + i * 10;
+        const frequency = 0.01 + i * 0.002;
 
-        for (let x = -canvas.width; x < canvas.width * 2; x++) {
+        for (let x = -cornerSize; x < cornerSize; x++) {
           const y = Math.sin(x * frequency + frame * 0.02 + i * 0.5) * amplitude;
+          ctx.lineTo(x + cornerSize / 4, y + cornerSize / 4);
+        }
+        ctx.stroke();
+      }
 
-          // The rotation is applied here to move from top-left to bottom-right
-          const diagonalX = x + y - yOffset;
-          const diagonalY = (x - y + yOffset) / 2;
+      // Bottom-right corner
+      for (let i = 0; i < waveCount; i++) {
+        ctx.beginPath();
+        const amplitude = 20 + i * 10;
+        const frequency = 0.01 + i * 0.002;
 
-          ctx.lineTo(diagonalX, diagonalY);
+        for (let x = -cornerSize; x < cornerSize; x++) {
+          const y = Math.sin(x * frequency + frame * 0.02 + i * 0.5) * amplitude;
+          ctx.lineTo(x + canvas.width - cornerSize / 4, y + canvas.height - cornerSize / 4);
         }
         ctx.stroke();
       }
