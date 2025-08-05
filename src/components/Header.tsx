@@ -130,7 +130,7 @@ export const Header: React.FC = () => {
             onClick={() => setLanguage('ru')}
             className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
               language === 'ru'
-                ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg'
+                ? 'bg-gradient-to-r from-brand-rose to-brand-purple text-white shadow-lg'
                 : 'text-slate-300 hover:text-white hover:bg-white/10'
             }`}
           >
@@ -140,7 +140,7 @@ export const Header: React.FC = () => {
             onClick={() => setLanguage('en')}
             className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
               language === 'en'
-                ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg'
+                ? 'bg-gradient-to-r from-brand-rose to-brand-purple text-white shadow-lg'
                 : 'text-slate-300 hover:text-white hover:bg-white/10'
             }`}
           >
@@ -163,7 +163,7 @@ export const Header: React.FC = () => {
           </a>
           <button 
             onClick={handleAuthAction}
-            className="px-4 lg:px-6 py-2 text-white rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg text-sm lg:text-base flex items-center space-x-2 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 hover:from-purple-600 hover:via-pink-600 hover:to-blue-600 shadow-pink-500/25"
+            className="px-4 lg:px-6 py-2 text-white rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg text-sm lg:text-base flex items-center space-x-2 bg-gradient-to-r from-brand-rose to-brand-purple hover:shadow-glow"
           >
             <span>{user ? t('logout') : t('login')}</span>
           </button>
@@ -217,7 +217,7 @@ export const Header: React.FC = () => {
                     }}
                     className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
                       language === 'ru'
-                        ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg'
+                        ? 'bg-gradient-to-r from-brand-rose to-brand-purple text-white shadow-lg'
                         : 'text-slate-300 hover:text-white hover:bg-white/10'
                     }`}
                   >
@@ -230,7 +230,7 @@ export const Header: React.FC = () => {
                     }}
                     className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
                       language === 'en'
-                        ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg'
+                        ? 'bg-gradient-to-r from-brand-rose to-brand-purple text-white shadow-lg'
                         : 'text-slate-300 hover:text-white hover:bg-white/10'
                     }`}
                   >
@@ -267,7 +267,7 @@ export const Header: React.FC = () => {
                     handleAuthAction();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full px-6 py-3 text-white rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg text-base flex items-center justify-center space-x-2 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 hover:from-purple-600 hover:via-pink-600 hover:to-blue-600 shadow-pink-500/25 mt-4"
+                  className="w-full px-6 py-3 text-white rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg text-base flex items-center justify-center space-x-2 bg-gradient-to-r from-brand-rose to-brand-purple hover:shadow-glow mt-4"
                 >
                   <span>{user ? t('logout') : t('login')}</span>
                 </button>
