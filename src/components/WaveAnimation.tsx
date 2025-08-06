@@ -21,33 +21,22 @@ const WaveAnimation: React.FC = () => {
     const drawWaves = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.lineWidth = 1;
-      ctx.strokeStyle = 'rgba(255, 192, 203, 0.1)'; // Even more subtle pink
+      ctx.strokeStyle = 'rgba(255, 192, 203, 0.12)'; // Subtle pink
 
-      const waveCount = 4; // Reduced wave count
-      const cornerSize = Math.min(canvas.width, canvas.height) * 0.5;
-
-      // Top-left corner
+      const waveCount = 8; // A reasonable number of waves
       for (let i = 0; i < waveCount; i++) {
         ctx.beginPath();
-        const amplitude = 20 + i * 10;
-        const frequency = 0.01 + i * 0.002;
+        const amplitude = 60 + i * 30;
+        const frequency = 0.003 + i * 0.0003;
+        const yOffset = (i - (waveCount - 1) / 2) * 100;
 
-        for (let x = -cornerSize; x < cornerSize; x++) {
-          const y = Math.sin(x * frequency + frame * 0.02 + i * 0.5) * amplitude;
-          ctx.lineTo(x + cornerSize / 4, y + cornerSize / 4);
-        }
-        ctx.stroke();
-      }
+        for (let x = -canvas.width * 1.5; x < canvas.width * 2.5; x++) {
+          const y = Math.sin(x * frequency + frame * 0.015 + i * 0.4) * amplitude;
 
-      // Bottom-right corner
-      for (let i = 0; i < waveCount; i++) {
-        ctx.beginPath();
-        const amplitude = 20 + i * 10;
-        const frequency = 0.01 + i * 0.002;
+          const diagonalX = x + y - yOffset;
+          const diagonalY = (x - y + yOffset) / 2;
 
-        for (let x = -cornerSize; x < cornerSize; x++) {
-          const y = Math.sin(x * frequency + frame * 0.02 + i * 0.5) * amplitude;
-          ctx.lineTo(x + canvas.width - cornerSize / 4, y + canvas.height - cornerSize / 4);
+          ctx.lineTo(diagonalX, diagonalY);
         }
         ctx.stroke();
       }
