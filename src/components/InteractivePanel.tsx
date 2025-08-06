@@ -430,12 +430,11 @@ export const InteractivePanel: React.FC = () => {
                 {services.map((service) => {
                   const Icon = service.icon;
                   const colors = {
-                    'daily-boost': 'from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500',
-                    'ask-anything': 'from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500',
-                    'style-guide': 'from-rose-400 to-purple-400 hover:from-rose-500 hover:to-purple-500',
-                    'heart-talk': 'from-pink-400 to-purple-400 hover:from-pink-500 hover:to-purple-500',
-                    'glow-up-plan': 'from-rose-400 to-pink-400 hover:from-rose-500 hover:to-pink-500',
-                    'tea-gossip': 'from-purple-400 to-rose-400 hover:from-purple-500 hover:to-rose-500',
+                    'morning-routine': 'from-amber-300 to-orange-400 hover:from-amber-400 hover:to-orange-500',
+                    'daily-planner': 'from-sky-300 to-blue-400 hover:from-sky-400 hover:to-blue-500',
+                    'self-care-idea': 'from-emerald-300 to-teal-400 hover:from-emerald-400 hover:to-teal-500',
+                    'book-suggestion': 'from-rose-300 to-pink-400 hover:from-rose-400 hover:to-pink-500',
+                    'coffee-break': 'from-stone-400 to-slate-500 hover:from-stone-500 hover:to-slate-600',
                   };
                   
                   return (
