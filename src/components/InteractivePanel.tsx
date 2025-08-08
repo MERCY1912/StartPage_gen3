@@ -459,7 +459,7 @@ export const InteractivePanel: React.FC = () => {
                       className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 transform hover:scale-105 flex items-center space-x-1 sm:space-x-2 ${
                         selectedService === service.id
                           ? `bg-gradient-to-r ${colors[service.id as keyof typeof colors]} text-white shadow-lg`
-                          : 'bg-white/10 text-brand-dark/70 hover:bg-white/20 hover:text-brand-dark border border-transparent hover:border-white/20 backdrop-blur-sm'
+                          : 'bg-gradient-to-r from-slate-600 to-slate-700 text-white/80 hover:text-white hover:from-slate-500 hover:to-slate-600 border border-transparent hover:border-white/20 backdrop-blur-sm'
                       }`}
                     >
                       <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
