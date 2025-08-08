@@ -15,7 +15,7 @@ interface Service {
   placeholderKey: string;
 }
 
-import { Sprout, BookOpen, Sun, Coffee, Calendar } from 'lucide-react';
+import { Sprout, BookOpen, Sun, Coffee, Calendar, Shirt } from 'lucide-react';
 
 const getServices = (): Service[] => [
   {
@@ -52,6 +52,13 @@ const getServices = (): Service[] => [
     titleKey: 'Кофе-брейк',
     descriptionKey: 'Короткий перерыв с интересным фактом или мыслью.',
     placeholderKey: 'Расскажи мне что-нибудь интересное...',
+  },
+  {
+    id: 'what-to-wear',
+    icon: Shirt,
+    titleKey: 'interactive.services.whatToWear.title',
+    descriptionKey: 'interactive.services.whatToWear.description',
+    placeholderKey: 'interactive.services.whatToWear.placeholder',
   },
 ];
 
@@ -135,6 +142,7 @@ export const InteractivePanel: React.FC = () => {
       'heart-talk': meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_HEART_TALK_MEOW : import.meta.env.VITE_N8N_WEBHOOK_HEART_TALK,
       'glow-up-plan': meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_GLOW_UP_PLAN_MEOW : import.meta.env.VITE_N8N_WEBHOOK_GLOW_UP_PLAN,
       'tea-gossip': meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_TEA_GOSSIP_MEOW : import.meta.env.VITE_N8N_WEBHOOK_TEA_GOSSIP,
+      'what-to-wear': meowModeEnabled ? import.meta.env.VITE_N8N_WEBHOOK_WHAT_TO_WEAR_MEOW : import.meta.env.VITE_N8N_WEBHOOK_WHAT_TO_WEAR,
     };
     
     return webhookUrls[serviceId as keyof typeof webhookUrls] || webhookUrls['daily-boost'];
@@ -435,6 +443,7 @@ export const InteractivePanel: React.FC = () => {
                     'self-care-idea': 'from-emerald-300 to-teal-400 hover:from-emerald-400 hover:to-teal-500',
                     'book-suggestion': 'from-rose-300 to-pink-400 hover:from-rose-400 hover:to-pink-500',
                     'coffee-break': 'from-stone-400 to-slate-500 hover:from-stone-500 hover:to-slate-600',
+                    'what-to-wear': 'from-pink-300 to-purple-400 hover:from-pink-400 hover:to-purple-500',
                   };
                   
                   return (

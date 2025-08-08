@@ -64,6 +64,11 @@
         "title": "Tea & Gossip",
         "description": "Fun, light-hearted mode: trending topics, celeb gossip, memes, quizzes, and more.",
         "placeholder": "What's the latest gossip?"
+      },
+      "whatToWear": {
+        "title": "What to wear",
+        "description": "Get a style suggestion based on the weather, occasion, or your mood.",
+        "placeholder": "I'm going to a wedding, help me with a look..."
       }
     },
     "buttons": {
