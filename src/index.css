@@ -156,28 +156,21 @@ input, textarea {
   }
 }
 
-@keyframes float1 {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(20px, 30px); }
-  100% { transform: translate(0, 0); }
+@keyframes rise {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 1;
+  }
 }
 
-@keyframes float2 {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(-30px, -20px); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes float3 {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(30px, -20px); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes float4 {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(-20px, 30px); }
-  100% { transform: translate(0, 0); }
+.animate-rise {
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 /* Дополнительное свечение для контейнера в мяу-режиме */
