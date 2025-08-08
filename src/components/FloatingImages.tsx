@@ -22,7 +22,7 @@ export const FloatingImages: React.FC = () => {
   }));
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden opacity-10">
+    <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden opacity-20">
       {images.map((src, index) => (
         <img
           key={index}
