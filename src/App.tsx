@@ -9,6 +9,7 @@ import { ParticleBackground } from './components/ParticleBackground';
 import WaveAnimation from './components/WaveAnimation';
 import { CursorTrail } from './components/CursorTrail';
 import { CursorTracker } from './components/CursorTracker';
+import { FloatingImages } from './components/FloatingImages';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           {/* Particle animation background */}
           <ParticleBackground />
           <WaveAnimation />
+          <FloatingImages />
           
           {/* Cursor trail effect */}
           <CursorTrail />

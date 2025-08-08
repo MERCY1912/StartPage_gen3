@@ -156,6 +156,30 @@ input, textarea {
   }
 }
 
+@keyframes float1 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, 30px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes float2 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-30px, -20px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes float3 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -20px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes float4 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, 30px); }
+  100% { transform: translate(0, 0); }
+}
+
 /* Дополнительное свечение для контейнера в мяу-режиме */
 .meow-mode-active {
   box-shadow: 0 0 30px rgba(251, 194, 219, 0.4);
