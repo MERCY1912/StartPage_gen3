@@ -8,9 +8,9 @@ export const Hero: React.FC = () => {
     <section className="relative z-10 px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8 text-center">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-slate-800 mb-4 sm:mb-6 leading-tight [text-shadow:_0_2px_4px_rgb(0_0_0_/_10%)]">
-          Твоя точка опоры каждый день.
-          <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-            Женский AI-ассистент, который слушает, поддерживает и помогает.
+          Для тебя. Каждый день.
+          <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+            Твой AI-ассистент — чтобы поддержать, выслушать и вдохновить на лучшее.
           </span>
         </h1>
 
