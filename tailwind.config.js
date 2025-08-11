@@ -4,19 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-pink': '#FFC0CB',
-        'brand-rose': '#F472B6',
-        'brand-purple': '#D946EF',
-        'brand-light': '#FDF2F8',
-        'brand-dark': '#1E1B1D',
-        'brand-text': '#4B4448',
+        'background': '#F9F7F6',
+        'text-primary': '#4A4A4A',
+        'text-secondary': '#8D8D8D',
+        'primary': '#EAD2D9',
+        'accent': '#F2C8A2',
+        'border': '#E5E5E5',
       },
       screens: {
         'xs': '475px',
       },
       fontFamily: {
-        'serif': ['Nunito', 'serif'],
-        'sans': ['Inter', 'sans-serif'],
+        'serif': ['"Playfair Display"', 'serif'],
+        'sans': ['"Montserrat"', 'sans-serif'],
       },
       animation: {
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',

@@ -370,7 +370,7 @@ export const InteractivePanel: React.FC = () => {
         {/* Input Panel */}
         <div className="max-w-4xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className={`backdrop-blur-xl bg-gradient-to-br from-white/30 to-white/10 border border-brand-pink rounded-2xl p-4 sm:p-6 lg:p-8 relative overflow-hidden shadow-2xl shadow-black/20 ${meowMode ? 'meow-mode-active' : ''}`}>
+            <div className={`backdrop-blur-xl bg-white/50 border border-primary rounded-2xl p-4 sm:p-6 lg:p-8 relative overflow-hidden shadow-lg shadow-primary/20 ${meowMode ? 'meow-mode-active' : ''}`}>
               {/* Мяу-режим огонек */}
               {meowMode && (
                 <div className="absolute inset-0 pointer-events-none">
@@ -378,28 +378,28 @@ export const InteractivePanel: React.FC = () => {
                 </div>
               )}
               
-              <h3 className="text-xl sm:text-2xl font-serif font-semibold text-brand-dark mb-4 sm:mb-6 text-center">
+              <h3 className="text-xl sm:text-2xl font-serif font-semibold text-text-primary mb-4 sm:mb-6 text-center">
                 Выбери, чем заняться сегодня вместе с AI-ассистентом
               </h3>
               
               {/* Тумблер Мяу-режима */}
               <div className="flex items-center justify-center mb-4 sm:mb-6">
                 <div className="flex items-center space-x-3">
-                  <Cat className={`w-5 h-5 transition-colors duration-300 ${meowMode ? 'text-brand-rose' : 'text-brand-text/50'}`} />
-                  <span className="text-sm text-brand-text">{t('interactive.meowMode')}</span>
+                  <Cat className={`w-5 h-5 transition-colors duration-300 ${meowMode ? 'text-primary' : 'text-text-secondary'}`} />
+                  <span className="text-sm text-text-primary">{t('interactive.meowMode')}</span>
                   <div className="relative">
                     <button
                       type="button"
                       onMouseEnter={() => setShowMeowTooltip(true)}
                       onMouseLeave={() => setShowMeowTooltip(false)}
-                      className="text-brand-text/60 hover:text-brand-text transition-colors duration-200"
+                      className="text-text-secondary/60 hover:text-text-secondary transition-colors duration-200"
                     >
                       <HelpCircle className="w-4 h-4" />
                     </button>
                     {showMeowTooltip && (
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-brand-dark/90 border border-brand-dark/20 rounded-lg text-xs text-brand-light whitespace-nowrap shadow-lg z-50">
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-text-primary/90 border border-text-primary/20 rounded-lg text-xs text-background whitespace-nowrap shadow-lg z-50">
                         {t('interactive.meowModeTooltip')}
-                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-brand-dark/90"></div>
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-text-primary/90"></div>
                       </div>
                     )}
                   </div>
@@ -411,8 +411,8 @@ export const InteractivePanel: React.FC = () => {
                       setResult(''); // Очищаем результат
                       setSelectedCards([]); // Очищаем выбранные карты
                     }}
-                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-pink/50 ${
-                      meowMode ? 'bg-brand-rose' : 'bg-brand-text/30'
+                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 ${
+                      meowMode ? 'bg-primary' : 'bg-text-secondary/30'
                     }`}
                   >
                     <span
@@ -437,13 +437,13 @@ export const InteractivePanel: React.FC = () => {
               <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
                 {services.map((service) => {
                   const Icon = service.icon;
-                  const colors = {
-                    'morning-routine': 'from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600',
-                    'daily-planner': 'from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600',
-                    'self-care-idea': 'from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600',
-                    'book-suggestion': 'from-rose-400 to-pink-500 hover:from-rose-500 hover:to-pink-600',
-                    'coffee-break': 'from-stone-500 to-slate-600 hover:from-stone-600 hover:to-slate-700',
-                    'what-to-wear': 'from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600',
+                  const serviceColors = {
+                    'morning-routine': 'from-accent to-primary',
+                    'daily-planner': 'from-primary to-accent',
+                    'self-care-idea': 'from-accent to-primary',
+                    'book-suggestion': 'from-primary to-accent',
+                    'coffee-break': 'from-accent to-primary',
+                    'what-to-wear': 'from-primary to-accent',
                   };
                   
                   return (
@@ -452,14 +452,14 @@ export const InteractivePanel: React.FC = () => {
                       type="button"
                       onClick={() => {
                         setSelectedService(service.id);
-                        setInput(''); // Очищаем поле ввода при смене сервиса
-                        setResult(''); // Очищаем результат
-                        setSelectedCards([]); // Очищаем выбранные карты
+                        setInput('');
+                        setResult('');
+                        setSelectedCards([]);
                       }}
                       className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 transform hover:scale-105 flex items-center space-x-1 sm:space-x-2 ${
                         selectedService === service.id
-                          ? `bg-gradient-to-r ${colors[service.id as keyof typeof colors]} text-white shadow-lg`
-                          : `bg-gradient-to-r ${colors[service.id as keyof typeof colors]} text-white/80`
+                          ? `bg-gradient-to-r ${serviceColors[service.id as keyof typeof serviceColors]} text-white shadow-lg shadow-primary/40`
+                          : `bg-white/40 text-text-primary hover:bg-white/80 border border-transparent`
                       }`}
                     >
                       <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -470,7 +470,7 @@ export const InteractivePanel: React.FC = () => {
               </div>
               
               <div className="space-y-4">
-                <p className="text-brand-text/80 text-center text-xs sm:text-sm mb-4 px-2">
+                <p className="text-text-secondary text-center text-xs sm:text-sm mb-4 px-2">
                   {t(currentService.descriptionKey)}
                 </p>
                 
@@ -478,14 +478,14 @@ export const InteractivePanel: React.FC = () => {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder={t(currentService.placeholderKey)}
-                  className="w-full h-24 sm:h-32 px-3 sm:px-4 py-2 sm:py-3 bg-brand-light/20 border border-brand-pink/30 rounded-xl text-brand-dark placeholder-brand-text/50 resize-none focus:outline-none focus:ring-2 focus:ring-brand-rose/50 focus:border-transparent backdrop-blur-sm text-sm sm:text-base"
+                  className="w-full h-24 sm:h-32 px-3 sm:px-4 py-2 sm:py-3 bg-white/50 border border-primary/30 rounded-xl text-text-primary placeholder-text-secondary resize-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent backdrop-blur-sm text-sm sm:text-base"
                   disabled={isLoading}
                 />
                 
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading || remaining === 0}
-                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-rose-400 to-pink-500 text-white rounded-xl font-semibold text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-rose-500 hover:to-pink-600 transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg shadow-pink-500/40 overflow-hidden group"
+                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-semibold text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-primary/90 hover:to-accent/90 transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg shadow-primary/40 overflow-hidden group"
                 >
                   {/* Звёздная пыль эффект */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -527,13 +527,13 @@ export const InteractivePanel: React.FC = () => {
 
           {/* Results */}
           {(isLoading || result || selectedCards.length > 0) && (
-            <div className="mt-6 sm:mt-8 backdrop-blur-xl bg-gradient-to-br from-white/30 to-white/10 border border-white/40 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl shadow-black/20">
-              <h4 className="text-lg sm:text-xl font-semibold text-brand-dark mb-4">{t('interactive.results.title')}</h4>
+            <div className="mt-6 sm:mt-8 backdrop-blur-xl bg-white/50 border border-primary rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg shadow-primary/20">
+              <h4 className="text-lg sm:text-xl font-semibold text-text-primary mb-4">{t('interactive.results.title')}</h4>
               
               {/* Отображение выбранных карт таро */}
               {selectedCards.length > 0 && (
                 <div className="mb-6">
-                  <h5 className="text-md font-medium text-brand-rose mb-3">{t('interactive.results.selectedCards')}</h5>
+                  <h5 className="text-md font-medium text-primary mb-3">{t('interactive.results.selectedCards')}</h5>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                     {selectedCards.map((card, index) => (
                       <div 
@@ -552,9 +552,9 @@ export const InteractivePanel: React.FC = () => {
                               target.src = `https://via.placeholder.com/200x350/4c1d95/ffffff?text=${encodeURIComponent(card.displayName)}`;
                             }}
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-text-primary/60 via-transparent to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <p className="text-xs sm:text-sm text-brand-text mt-2 font-medium">
+                        <p className="text-xs sm:text-sm text-text-secondary mt-2 font-medium">
                           {card.displayName}
                         </p>
                       </div>
@@ -565,9 +565,9 @@ export const InteractivePanel: React.FC = () => {
               
               {isLoading ? (
                 <div className="space-y-3">
-                  <div className="h-4 bg-gradient-to-r from-brand-pink/20 via-brand-rose/20 to-brand-purple/20 rounded animate-pulse"></div>
-                  <div className="h-4 bg-gradient-to-r from-brand-purple/20 via-brand-pink/20 to-brand-rose/20 rounded animate-pulse"></div>
-                  <div className="h-4 bg-gradient-to-r from-brand-rose/20 via-brand-purple/20 to-brand-pink/20 rounded w-3/4 animate-pulse"></div>
+                  <div className="h-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded animate-pulse"></div>
+                  <div className="h-4 bg-gradient-to-r from-accent/20 via-primary/20 to-accent/20 rounded animate-pulse"></div>
+                  <div className="h-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded w-3/4 animate-pulse"></div>
                 </div>
               ) : result && (
                 <>
@@ -580,7 +580,7 @@ export const InteractivePanel: React.FC = () => {
                   <div className="flex justify-center mt-4">
                     <button
                       onClick={handleCopyText}
-                      className="px-4 py-2 bg-brand-light/30 hover:bg-brand-light/50 border border-brand-pink/30 rounded-lg text-brand-dark hover:text-brand-dark/90 transition-all duration-200 flex items-center space-x-2 text-sm"
+                      className="px-4 py-2 bg-white/50 hover:bg-white/80 border border-primary/30 rounded-lg text-text-primary hover:text-text-primary/90 transition-all duration-200 flex items-center space-x-2 text-sm"
                     >
                       {copySuccess ? (
                         <>

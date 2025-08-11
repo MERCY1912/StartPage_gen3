@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-background: #F9F7F6;
+  --color-text-primary: #4A4A4A;
+  --color-text-secondary: #8D8D8D;
+  --color-primary: #EAD2D9;
+  --color-accent: #F2C8A2;
+  --color-border: #E5E5E5;
+}
+
 /* Custom cursor for mystical feel */
 * {
   cursor: none;
@@ -15,13 +24,13 @@ body::after {
   left: var(--cursor-x, 0);
   width: 8px;
   height: 8px;
-  background: radial-gradient(circle, rgba(251, 194, 219, 0.8) 0%, rgba(233, 133, 165, 0.4) 70%, transparent 100%);
+  background: radial-gradient(circle, var(--color-primary) 0%, var(--color-accent) 100%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
   transition: all 0.1s ease-out;
-  box-shadow: 0 0 10px rgba(251, 194, 219, 0.5);
+  box-shadow: 0 0 10px var(--color-primary);
 }
 
 /* Restore cursor for interactive elements */
@@ -35,12 +44,13 @@ input, textarea {
 
 /* Prose styles for AI responses */
 .prose {
-  color: theme('colors.brand-text');
+  color: theme('colors.text-secondary');
 }
 
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-  color: theme('colors.brand-dark');
-  font-weight: 600;
+  color: theme('colors.text-primary');
+  font-family: theme('fontFamily.serif');
+  font-weight: 500;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
@@ -55,12 +65,12 @@ input, textarea {
 }
 
 .prose strong, .prose b {
-  color: theme('colors.brand-dark');
-  font-weight: 600;
+  color: theme('colors.text-primary');
+  font-weight: 500;
 }
 
 .prose em, .prose i {
-  color: theme('colors.brand-rose');
+  color: theme('colors.primary');
   font-style: italic;
 }
 
@@ -74,23 +84,23 @@ input, textarea {
 }
 
 .prose blockquote {
-  border-left: 4px solid theme('colors.brand-pink');
+  border-left: 4px solid theme('colors.primary');
   padding-left: 1em;
   margin: 1em 0;
   font-style: italic;
-  color: theme('colors.brand-text');
+  color: theme('colors.text-secondary');
 }
 
 .prose code {
-  background-color: rgba(251, 194, 219, 0.2);
+  background-color: theme('colors.primary / 20%');
   padding: 0.2em 0.4em;
   border-radius: 0.25em;
   font-size: 0.9em;
-  color: theme('colors.brand-dark');
+  color: theme('colors.text-primary');
 }
 
 .prose pre {
-  background-color: rgba(255, 245, 248, 0.5);
+  background-color: theme('colors.primary / 10%');
   padding: 1em;
   border-radius: 0.5em;
   overflow-x: auto;
@@ -103,17 +113,17 @@ input, textarea {
 }
 
 .prose a {
-  color: theme('colors.brand-rose');
+  color: theme('colors.primary');
   text-decoration: underline;
 }
 
 .prose a:hover {
-  color: theme('colors.brand-pink');
+  color: theme('colors.accent');
 }
 
 .prose hr {
   border: none;
-  border-top: 1px solid theme('colors.brand-pink');
+  border-top: 1px solid theme('colors.border');
   margin: 2em 0;
 }
 
@@ -122,9 +132,9 @@ input, textarea {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: radial-gradient(circle, rgba(251, 194, 219, 1) 0%, rgba(233, 133, 165, 0.8) 50%, rgba(233, 133, 165, 0.4) 80%, transparent 100%);
+  background: radial-gradient(circle, var(--color-primary) 0%, var(--color-accent) 100%);
   border-radius: 50%;
-  box-shadow: 0 0 25px rgba(251, 194, 219, 0.8), 0 0 40px rgba(233, 133, 165, 0.5), 0 0 60px rgba(233, 133, 165, 0.3);
+  box-shadow: 0 0 25px var(--color-primary), 0 0 40px var(--color-accent);
   animation: meowLightRun 4s linear infinite;
 }
 
