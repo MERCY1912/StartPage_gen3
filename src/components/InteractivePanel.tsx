@@ -448,10 +448,10 @@ export const InteractivePanel: React.FC = () => {
                         setResult('');
                         setSelectedCards([]);
                       }}
-                      className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center space-x-1 sm:space-x-2 border ${
+                      className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center space-x-1 sm:space-x-2 ${
                         selectedService === service.id
-                          ? `bg-primary border-primary text-white`
-                          : `bg-white border-border text-text-primary hover:bg-primary hover:border-primary hover:text-white`
+                          ? `bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30`
+                          : `bg-secondary text-text-primary hover:bg-gradient-to-r hover:from-primary hover:to-accent hover:text-white`
                       }`}
                     >
                       <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -477,7 +477,7 @@ export const InteractivePanel: React.FC = () => {
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading || remaining === 0}
-                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-accent to-primary text-white rounded-xl font-medium text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 ease-in-out transform shadow-[0px_4px_12px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 flex items-center justify-center space-x-2 overflow-hidden group"
+                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-primary to-accent text-white rounded-full font-medium text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl shadow-primary/30 flex items-center justify-center space-x-2 overflow-hidden group"
                 >
                   {/* Звёздная пыль эффект */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #FDF8F5;
-  --color-text-primary: #333333;
-  --color-text-secondary: #888888;
-  --color-primary: #D4A3A3;
-  --color-accent: #E3B7A0;
-  --color-border: #EAEAEA;
+  --color-background: #FFF5EE;
+  --color-text-primary: #4E3B31;
+  --color-text-secondary: #A1887F;
+  --color-primary: #FADADD;
+  --color-accent: #E799A3;
+  --color-secondary: #E6DAF0;
+  --color-border: #EFE5DD;
 }
 
 /* Custom cursor for mystical feel */

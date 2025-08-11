@@ -4,14 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        'background': '#FDF8F5',
-        'text-primary': '#333333',
-        'text-secondary': '#888888',
-        'primary': '#E4A596',
-        'accent': '#F0B2A3',
-        'border': '#E0D8D5',
-        'peach': '#F5E3E0',
-        'blush-pink': '#FADCD9',
+        'background': '#FFF5EE',
+        'text-primary': '#4E3B31',
+        'text-secondary': '#A1887F',
+        'primary': '#FADADD',
+        'accent': '#E799A3',
+        'secondary': '#E6DAF0',
+        'border': '#EFE5DD',
       },
       screens: {
         'xs': '475px',
