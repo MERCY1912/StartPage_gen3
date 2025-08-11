@@ -20,42 +20,42 @@ import { Sprout, BookOpen, Sun, Coffee, Calendar, Shirt } from 'lucide-react';
 const getServices = (): Service[] => [
   {
     id: 'morning-routine',
-    icon: Sun,
+    icon: "https://blog.lunarum.app/wp-content/uploads/2025/08/rising-sun.png",
     titleKey: 'Начни свой день с вдохновения',
     descriptionKey: 'Начни свой день с позитивных аффирмаций и мотивации.',
     placeholderKey: 'Хочу получить заряд бодрости на весь день...',
   },
   {
     id: 'daily-planner',
-    icon: Calendar,
+    icon: "https://blog.lunarum.app/wp-content/uploads/2025/08/calendar-2.png",
     titleKey: 'Планирование дня',
     descriptionKey: 'Организуй свои задачи и расставь приоритеты.',
     placeholderKey: 'Помоги мне спланировать мой день...',
   },
   {
     id: 'self-care-idea',
-    icon: Sprout,
+    icon: "https://blog.lunarum.app/wp-content/uploads/2025/08/girl.png",
     titleKey: 'Идея для заботы о себе',
     descriptionKey: 'Найди время для себя с персональной рекомендацией.',
     placeholderKey: 'Что я могу сделать для себя сегодня?',
   },
   {
     id: 'book-suggestion',
-    icon: BookOpen,
+    icon: "https://blog.lunarum.app/wp-content/uploads/2025/08/book.png",
     titleKey: 'Книжная рекомендация',
     descriptionKey: 'Получи совет, какую книгу почитать вечером.',
     placeholderKey: 'Посоветуй мне книгу под настроение...',
   },
   {
     id: 'coffee-break',
-    icon: Coffee,
+    icon: "https://blog.lunarum.app/wp-content/uploads/2025/08/coffee-cup.png",
     titleKey: 'Кофе-брейк',
     descriptionKey: 'Короткий перерыв с интересным фактом или мыслью.',
     placeholderKey: 'Расскажи мне что-нибудь интересное...',
   },
   {
     id: 'what-to-wear',
-    icon: Shirt,
+    icon: "https://blog.lunarum.app/wp-content/uploads/2025/08/dress.png",
     titleKey: 'interactive.services.whatToWear.title',
     descriptionKey: 'interactive.services.whatToWear.description',
     placeholderKey: 'interactive.services.whatToWear.placeholder',
@@ -454,7 +454,11 @@ export const InteractivePanel: React.FC = () => {
                           : `bg-secondary text-text-primary hover:bg-gradient-to-r hover:from-primary hover:to-accent hover:text-white`
                       }`}
                     >
-                      <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
+                      {typeof service.icon === 'string' ? (
+                        <img src={service.icon} alt="" className="w-4 h-4" />
+                      ) : (
+                        <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
+                      )}
                       <span>{t(service.titleKey)}</span>
                     </button>
                   );
