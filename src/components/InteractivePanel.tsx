@@ -478,14 +478,14 @@ export const InteractivePanel: React.FC = () => {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder={t(currentService.placeholderKey)}
-                  className="w-full h-24 sm:h-32 px-3 sm:px-4 py-2 sm:py-3 bg-white/50 border border-primary/30 rounded-xl text-text-primary placeholder-text-secondary resize-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent backdrop-blur-sm text-sm sm:text-base"
+                  className="w-full h-24 sm:h-32 px-3 sm:px-4 py-2 sm:py-3 bg-white border border-border rounded-lg text-text-primary placeholder-text-secondary resize-none focus:outline-none focus:border-primary backdrop-blur-sm text-sm sm:text-base"
                   disabled={isLoading}
                 />
                 
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading || remaining === 0}
-                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-semibold text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-primary/90 hover:to-accent/90 transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg shadow-primary/40 overflow-hidden group"
+                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-accent to-primary text-white rounded-xl font-medium text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center space-x-2 overflow-hidden group"
                 >
                   {/* Звёздная пыль эффект */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
