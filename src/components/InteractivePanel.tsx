@@ -21,7 +21,7 @@ const getServices = (): Service[] => [
   {
     id: 'morning-routine',
     icon: Sun,
-    titleKey: 'Утренний настрой',
+    titleKey: 'Начни свой день с вдохновения',
     descriptionKey: 'Начни свой день с позитивных аффирмаций и мотивации.',
     placeholderKey: 'Хочу получить заряд бодрости на весь день...',
   },
