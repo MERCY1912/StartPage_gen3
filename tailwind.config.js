@@ -10,6 +10,8 @@ export default {
         'primary': '#E4A596',
         'accent': '#F0B2A3',
         'border': '#E0D8D5',
+        'peach': '#F5E3E0',
+        'blush-pink': '#FADCD9',
       },
       screens: {
         'xs': '475px',
