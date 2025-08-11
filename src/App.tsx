@@ -10,6 +10,7 @@ import WaveAnimation from './components/WaveAnimation';
 import { CursorTrail } from './components/CursorTrail';
 import { CursorTracker } from './components/CursorTracker';
 import { FloatingEmojis } from './components/FloatingEmojis';
+import { BackgroundAccent } from './components/BackgroundAccent';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <ParticleBackground />
           <WaveAnimation />
           <FloatingEmojis />
+          <BackgroundAccent />
           
           {/* Cursor trail effect */}
           <CursorTrail />
