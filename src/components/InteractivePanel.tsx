@@ -437,14 +437,6 @@ export const InteractivePanel: React.FC = () => {
               <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
                 {services.map((service) => {
                   const Icon = service.icon;
-                  const serviceColors = {
-                    'morning-routine': 'from-accent to-primary',
-                    'daily-planner': 'from-primary to-accent',
-                    'self-care-idea': 'from-accent to-primary',
-                    'book-suggestion': 'from-primary to-accent',
-                    'coffee-break': 'from-accent to-primary',
-                    'what-to-wear': 'from-primary to-accent',
-                  };
                   
                   return (
                     <button
@@ -456,10 +448,10 @@ export const InteractivePanel: React.FC = () => {
                         setResult('');
                         setSelectedCards([]);
                       }}
-                      className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 transform hover:scale-105 flex items-center space-x-1 sm:space-x-2 ${
+                      className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 transform hover:scale-105 flex items-center space-x-1 sm:space-x-2 border ${
                         selectedService === service.id
-                          ? `bg-gradient-to-r ${serviceColors[service.id as keyof typeof serviceColors]} text-white shadow-lg shadow-primary/40`
-                          : `bg-white/40 text-text-primary hover:bg-white/80 border border-transparent`
+                          ? `bg-primary border-primary text-white`
+                          : `bg-white border-border text-text-primary hover:bg-primary hover:border-primary hover:text-white`
                       }`}
                     >
                       <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
