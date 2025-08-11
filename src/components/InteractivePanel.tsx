@@ -365,7 +365,7 @@ export const InteractivePanel: React.FC = () => {
   }
 
   return (
-    <section className="relative z-10 px-4 py-8 sm:py-12 lg:py-16 sm:px-6 lg:px-8 animate-fade-in-slide-up">
+    <section className="relative z-10 px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8 animate-fade-in-slide-up">
       <div className="max-w-6xl mx-auto">
         {/* Input Panel */}
         <div className="max-w-4xl mx-auto">
