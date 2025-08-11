@@ -27,23 +27,24 @@ export const ParticleBackground: React.FC = () => {
     };
 
     const createParticles = () => {
-      const particleCount = Math.min(50, window.innerWidth / 20);
+      const particleCount = Math.min(30, window.innerWidth / 30); // Fewer, larger particles
       particlesRef.current = [];
 
       for (let i = 0; i < particleCount; i++) {
         particlesRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 2 + 0.5,
-          speedX: (Math.random() - 0.5) * 0.3,
-          speedY: (Math.random() - 0.5) * 0.3,
-          opacity: Math.random() * 0.5 + 0.2,
+          size: Math.random() * 6 + 2, // Larger size for bokeh
+          speedX: (Math.random() - 0.5) * 0.1, // Slower speed
+          speedY: (Math.random() - 0.5) * 0.1, // Slower speed
+          opacity: Math.random() * 0.2 + 0.1, // Lower opacity
         });
       }
     };
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.filter = 'blur(3px)'; // Add blur for bokeh effect
 
       particlesRef.current.forEach((particle) => {
         particle.x += particle.speedX;
@@ -54,7 +55,8 @@ export const ParticleBackground: React.FC = () => {
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        const colors = ['196, 181, 253', '244, 114, 182', '52, 211, 153'];
+        // New pastel colors from the theme
+        const colors = ['228, 165, 150', '240, 178, 163', '242, 200, 162'];
         const colorIndex = Math.floor(particle.x / (canvas.width / 3));
         const color = colors[Math.min(colorIndex, colors.length - 1)];
         ctx.fillStyle = `rgba(${color}, ${particle.opacity})`;

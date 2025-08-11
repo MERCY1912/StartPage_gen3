@@ -9,21 +9,15 @@ import { ParticleBackground } from './components/ParticleBackground';
 import WaveAnimation from './components/WaveAnimation';
 import { CursorTrail } from './components/CursorTrail';
 import { CursorTracker } from './components/CursorTracker';
-import { FloatingEmojis } from './components/FloatingEmojis';
-import { BackgroundAccent } from './components/BackgroundAccent';
-import { NoiseBackground } from './components/NoiseBackground';
 
 function App() {
   return (
     <LanguageProvider>
       <AuthProvider>
-        <div className="min-h-screen bg-background font-sans relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-peach to-blush-pink font-sans relative overflow-hidden">
           {/* Particle animation background */}
-          <NoiseBackground />
           <ParticleBackground />
           <WaveAnimation />
-          <FloatingEmojis />
-          <BackgroundAccent />
           
           {/* Cursor trail effect */}
           <CursorTrail />
