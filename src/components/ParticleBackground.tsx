@@ -1,21 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 
-interface Petal {
+interface Particle {
   x: number;
   y: number;
   size: number;
+  speedX: number;
   speedY: number;
   opacity: number;
-  rotation: number;
-  rotationSpeed: number;
-  sway: number;
-  swaySpeed: number;
-  swayAmplitude: number;
 }
 
-export const FloatingPetals: React.FC = () => {
+export const ParticleBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<Petal[]>([]);
+  const particlesRef = useRef<Particle[]>([]);
   const animationRef = useRef<number>();
 
   useEffect(() => {
@@ -31,21 +27,17 @@ export const FloatingPetals: React.FC = () => {
     };
 
     const createParticles = () => {
-      const particleCount = 20;
+      const particleCount = Math.min(50, window.innerWidth / 20);
       particlesRef.current = [];
 
       for (let i = 0; i < particleCount; i++) {
         particlesRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 15 + 10,
-          speedY: Math.random() * 0.5 + 0.2,
-          opacity: Math.random() * 0.3 + 0.2,
-          rotation: Math.random() * 360,
-          rotationSpeed: (Math.random() - 0.5) * 0.01,
-          sway: Math.random() * Math.PI * 2,
-          swaySpeed: Math.random() * 0.01 + 0.01,
-          swayAmplitude: Math.random() * 20 + 10,
+          size: Math.random() * 2 + 0.5,
+          speedX: (Math.random() - 0.5) * 0.3,
+          speedY: (Math.random() - 0.5) * 0.3,
+          opacity: Math.random() * 0.5 + 0.2,
         });
       }
     };
@@ -53,24 +45,20 @@ export const FloatingPetals: React.FC = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particlesRef.current.forEach((petal) => {
-        petal.y += petal.speedY;
-        petal.rotation += petal.rotationSpeed;
-        petal.sway += petal.swaySpeed;
-        const currentSway = Math.sin(petal.sway) * petal.swayAmplitude;
+      particlesRef.current.forEach((particle) => {
+        particle.x += particle.speedX;
+        particle.y += particle.speedY;
 
-        if (petal.y > canvas.height + petal.size) {
-          petal.y = -petal.size;
-          petal.x = Math.random() * canvas.width;
-        }
+        if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
 
-        ctx.save();
-        ctx.globalAlpha = petal.opacity;
-        ctx.font = `${petal.size}px serif`;
-        ctx.translate(petal.x + currentSway, petal.y);
-        ctx.rotate(petal.rotation);
-        ctx.fillText('🌸', -petal.size / 2, petal.size / 2);
-        ctx.restore();
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        const colors = ['196, 181, 253', '244, 114, 182', '52, 211, 153'];
+        const colorIndex = Math.floor(particle.x / (canvas.width / 3));
+        const color = colors[Math.min(colorIndex, colors.length - 1)];
+        ctx.fillStyle = `rgba(${color}, ${particle.opacity})`;
+        ctx.fill();
       });
 
       animationRef.current = requestAnimationFrame(animate);
