@@ -33,6 +33,19 @@ body::after {
   box-shadow: 0 0 10px var(--color-primary);
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  filter: url(#noiseFilter);
+  opacity: 0.05;
+  z-index: -1;
+}
+
 /* Restore cursor for interactive elements */
 button, a, input, textarea, select {
   cursor: pointer;
