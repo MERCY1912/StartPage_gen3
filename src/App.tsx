@@ -14,7 +14,7 @@ function App() {
   return (
     <LanguageProvider>
       <AuthProvider>
-        <div className="min-h-screen bg-gradient-to-br from-peach to-blush-pink font-sans relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-background to-secondary font-sans relative overflow-hidden">
           {/* Particle animation background */}
           <ParticleBackground />
           <WaveAnimation />

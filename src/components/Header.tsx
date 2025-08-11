@@ -130,8 +130,8 @@ export const Header: React.FC = () => {
             onClick={() => setLanguage('ru')}
             className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ease-in-out ${
               language === 'ru'
-                ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg'
-                : 'text-text-secondary hover:text-text-primary hover:bg-white/20'
+                ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30'
+                : 'text-text-secondary hover:text-text-primary'
             }`}
           >
             RU
@@ -140,8 +140,8 @@ export const Header: React.FC = () => {
             onClick={() => setLanguage('en')}
             className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ease-in-out ${
               language === 'en'
-                ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg'
-                : 'text-text-secondary hover:text-text-primary hover:bg-white/20'
+                ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30'
+                : 'text-text-secondary hover:text-text-primary'
             }`}
           >
             ENG
@@ -161,7 +161,7 @@ export const Header: React.FC = () => {
           </a>
           <button 
             onClick={handleAuthAction}
-            className="px-4 lg:px-6 py-2 text-white rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg text-sm lg:text-base flex items-center space-x-2 bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/40"
+            className="px-4 lg:px-6 py-2 text-white rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg shadow-primary/30 text-sm lg:text-base flex items-center space-x-2 bg-gradient-to-r from-primary to-accent hover:shadow-xl"
           >
             <span>{user ? t('logout') : t('login')}</span>
           </button>
