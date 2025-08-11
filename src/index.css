@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #F9F7F6;
-  --color-text-primary: #4A4A4A;
-  --color-text-secondary: #8D8D8D;
-  --color-primary: #EAD2D9;
-  --color-accent: #F2C8A2;
-  --color-border: #E5E5E5;
+  --color-background: #FDF8F5;
+  --color-text-primary: #333333;
+  --color-text-secondary: #888888;
+  --color-primary: #D4A3A3;
+  --color-accent: #E3B7A0;
+  --color-border: #EAEAEA;
 }
 
 /* Custom cursor for mystical feel */
@@ -185,7 +185,7 @@ input, textarea {
 
 /* Дополнительное свечение для контейнера в мяу-режиме */
 .meow-mode-active {
-  box-shadow: 0 0 30px rgba(251, 194, 219, 0.4);
+  box-shadow: 0 0 30px theme('colors.primary / 40%');
 }
 
 /* Дополнительные анимации для звёздной пыли */
@@ -249,4 +249,19 @@ input, textarea {
 
 .animate-fly {
   animation: fly 10s linear infinite;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-slide-up {
+  animation: fadeInSlideUp 0.5s ease-out forwards;
 }

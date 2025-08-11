@@ -365,7 +365,7 @@ export const InteractivePanel: React.FC = () => {
   }
 
   return (
-    <section className="relative z-10 px-4 py-8 sm:py-12 lg:py-16 sm:px-6 lg:px-8">
+    <section className="relative z-10 px-4 py-8 sm:py-12 lg:py-16 sm:px-6 lg:px-8 animate-fade-in-slide-up">
       <div className="max-w-6xl mx-auto">
         {/* Input Panel */}
         <div className="max-w-4xl mx-auto">
@@ -385,14 +385,14 @@ export const InteractivePanel: React.FC = () => {
               {/* Тумблер Мяу-режима */}
               <div className="flex items-center justify-center mb-4 sm:mb-6">
                 <div className="flex items-center space-x-3">
-                  <Cat className={`w-5 h-5 transition-colors duration-300 ${meowMode ? 'text-primary' : 'text-text-secondary'}`} />
+                  <Cat className={`w-5 h-5 transition-colors duration-300 ease-in-out ${meowMode ? 'text-primary' : 'text-text-secondary'}`} />
                   <span className="text-sm text-text-primary">{t('interactive.meowMode')}</span>
                   <div className="relative">
                     <button
                       type="button"
                       onMouseEnter={() => setShowMeowTooltip(true)}
                       onMouseLeave={() => setShowMeowTooltip(false)}
-                      className="text-text-secondary/60 hover:text-text-secondary transition-colors duration-200"
+                      className="text-text-secondary/60 hover:text-text-secondary transition-colors duration-300 ease-in-out"
                     >
                       <HelpCircle className="w-4 h-4" />
                     </button>
@@ -411,12 +411,12 @@ export const InteractivePanel: React.FC = () => {
                       setResult(''); // Очищаем результат
                       setSelectedCards([]); // Очищаем выбранные карты
                     }}
-                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 ${
+                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary/50 ${
                       meowMode ? 'bg-primary' : 'bg-text-secondary/30'
                     }`}
                   >
                     <span
-                      className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${
+                      className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ease-in-out ${
                         meowMode ? 'translate-x-6' : 'translate-x-1'
                       }`}
                     />
@@ -437,14 +437,6 @@ export const InteractivePanel: React.FC = () => {
               <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
                 {services.map((service) => {
                   const Icon = service.icon;
-                  const serviceColors = {
-                    'morning-routine': 'from-accent to-primary',
-                    'daily-planner': 'from-primary to-accent',
-                    'self-care-idea': 'from-accent to-primary',
-                    'book-suggestion': 'from-primary to-accent',
-                    'coffee-break': 'from-accent to-primary',
-                    'what-to-wear': 'from-primary to-accent',
-                  };
                   
                   return (
                     <button
@@ -456,10 +448,10 @@ export const InteractivePanel: React.FC = () => {
                         setResult('');
                         setSelectedCards([]);
                       }}
-                      className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 transform hover:scale-105 flex items-center space-x-1 sm:space-x-2 ${
+                      className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out transform hover:scale-105 flex items-center space-x-1 sm:space-x-2 border ${
                         selectedService === service.id
-                          ? `bg-gradient-to-r ${serviceColors[service.id as keyof typeof serviceColors]} text-white shadow-lg shadow-primary/40`
-                          : `bg-white/40 text-text-primary hover:bg-white/80 border border-transparent`
+                          ? `bg-primary border-primary text-white`
+                          : `bg-white border-border text-text-primary hover:bg-primary hover:border-primary hover:text-white`
                       }`}
                     >
                       <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -478,14 +470,14 @@ export const InteractivePanel: React.FC = () => {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder={t(currentService.placeholderKey)}
-                  className="w-full h-24 sm:h-32 px-3 sm:px-4 py-2 sm:py-3 bg-white border border-border rounded-lg text-text-primary placeholder-text-secondary resize-none focus:outline-none focus:border-primary backdrop-blur-sm text-sm sm:text-base"
+                  className="w-full h-24 sm:h-32 px-3 sm:px-4 py-2 sm:py-3 bg-white border border-border rounded-lg text-text-primary placeholder-text-secondary resize-none focus:outline-none focus:border-primary backdrop-blur-sm text-sm sm:text-base transition-colors duration-300 ease-in-out"
                   disabled={isLoading}
                 />
                 
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading || remaining === 0}
-                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-accent to-primary text-white rounded-xl font-medium text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center space-x-2 overflow-hidden group"
+                  className="relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-accent to-primary text-white rounded-xl font-medium text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 ease-in-out transform hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center space-x-2 overflow-hidden group"
                 >
                   {/* Звёздная пыль эффект */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
