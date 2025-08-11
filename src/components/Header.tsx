@@ -78,7 +78,7 @@ export const Header: React.FC = () => {
     <>
       <header className="relative z-20 px-4 py-6 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
+        <a href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-300 ease-in-out">
           <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
             <Sparkles className="w-6 h-6 text-white" />
           </div>
@@ -91,13 +91,13 @@ export const Header: React.FC = () => {
         <div className="hidden sm:flex items-center space-x-8">
           {/* Atmosphere Toggle */}
           <div className="flex items-center space-x-2">
-            <Music className={`w-4 h-4 transition-colors duration-300 ${isAtmosphereMode ? 'text-accent' : 'text-text-secondary'}`} />
+            <Music className={`w-4 h-4 transition-colors duration-300 ease-in-out ${isAtmosphereMode ? 'text-accent' : 'text-text-secondary'}`} />
             <div className="relative">
               <button
                 type="button"
                 onMouseEnter={() => setShowAtmosphereTooltip(true)}
                 onMouseLeave={() => setShowAtmosphereTooltip(false)}
-                className="text-text-secondary hover:text-text-primary transition-colors duration-200"
+                className="text-text-secondary hover:text-text-primary transition-colors duration-300 ease-in-out"
               >
                 <HelpCircle className="w-3 h-3" />
               </button>
@@ -111,12 +111,12 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsAtmosphereMode(!isAtmosphereMode)}
-              className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent/50 ${
+              className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-accent/50 ${
                 isAtmosphereMode ? 'bg-gradient-to-r from-primary to-accent' : 'bg-text-secondary/30'
               }`}
             >
               <span
-                className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform duration-300 ${
+                className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform duration-300 ease-in-out ${
                   isAtmosphereMode ? 'translate-x-5' : 'translate-x-1'
                 }`}
               />
@@ -128,7 +128,7 @@ export const Header: React.FC = () => {
           <Globe className="w-4 h-4 text-text-secondary ml-2" />
           <button
             onClick={() => setLanguage('ru')}
-            className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
+            className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ease-in-out ${
               language === 'ru'
                 ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg'
                 : 'text-text-secondary hover:text-text-primary hover:bg-white/20'
@@ -138,7 +138,7 @@ export const Header: React.FC = () => {
           </button>
           <button
             onClick={() => setLanguage('en')}
-            className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
+            className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ease-in-out ${
               language === 'en'
                 ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg'
                 : 'text-text-secondary hover:text-text-primary hover:bg-white/20'
@@ -150,18 +150,18 @@ export const Header: React.FC = () => {
         </div>
         
         <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
-          <a href="#support" className="text-base text-text-secondary hover:text-text-primary transition-colors duration-200">
+          <a href="#support" className="text-base text-text-secondary hover:text-text-primary transition-colors duration-300 ease-in-out">
             {t('nav.support')}
           </a>
-          <a href="#about" className="text-base text-text-secondary hover:text-text-primary transition-colors duration-200">
+          <a href="#about" className="text-base text-text-secondary hover:text-text-primary transition-colors duration-300 ease-in-out">
             {t('nav.about')}
           </a>
-          <a href="#articles" className="text-base text-text-secondary hover:text-text-primary transition-colors duration-200">
+          <a href="#articles" className="text-base text-text-secondary hover:text-text-primary transition-colors duration-300 ease-in-out">
             {t('nav.articles')}
           </a>
           <button 
             onClick={handleAuthAction}
-            className="px-4 lg:px-6 py-2 text-white rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg text-sm lg:text-base flex items-center space-x-2 bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/40"
+            className="px-4 lg:px-6 py-2 text-white rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg text-sm lg:text-base flex items-center space-x-2 bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/40"
           >
             <span>{user ? t('logout') : t('login')}</span>
           </button>
@@ -169,7 +169,7 @@ export const Header: React.FC = () => {
 
         <button 
           onClick={toggleMobileMenu}
-          className="lg:hidden text-text-primary hover:text-primary transition-colors"
+          className="lg:hidden text-text-primary hover:text-primary transition-colors duration-300 ease-in-out"
         >
           {isMobileMenuOpen ? (
             <X className="w-6 h-6" />
@@ -188,17 +188,17 @@ export const Header: React.FC = () => {
                 <div className="space-y-6 mb-4">
                   {/* Mobile Atmosphere Toggle */}
                   <div className="flex items-center justify-center space-x-3">
-                    <Music className={`w-4 h-4 transition-colors duration-300 ${isAtmosphereMode ? 'text-accent' : 'text-text-secondary'}`} />
+                    <Music className={`w-4 h-4 transition-colors duration-300 ease-in-out ${isAtmosphereMode ? 'text-accent' : 'text-text-secondary'}`} />
                     <span className="text-sm text-text-secondary">{t('interactive.atmosphereMode')}</span>
                     <button
                       type="button"
                       onClick={() => setIsAtmosphereMode(!isAtmosphereMode)}
-                      className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent/50 ${
+                      className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-accent/50 ${
                         isAtmosphereMode ? 'bg-gradient-to-r from-primary to-accent' : 'bg-text-secondary/30'
                       }`}
                     >
                       <span
-                        className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform duration-300 ${
+                        className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform duration-300 ease-in-out ${
                           isAtmosphereMode ? 'translate-x-5' : 'translate-x-1'
                         }`}
                       />
@@ -213,7 +213,7 @@ export const Header: React.FC = () => {
                       setLanguage('ru');
                       setIsMobileMenuOpen(false);
                     }}
-                    className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
+                    className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ease-in-out ${
                       language === 'ru'
                         ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg'
                         : 'text-text-secondary hover:text-text-primary hover:bg-white/20'
@@ -226,7 +226,7 @@ export const Header: React.FC = () => {
                       setLanguage('en');
                       setIsMobileMenuOpen(false);
                     }}
-                    className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
+                    className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ease-in-out ${
                       language === 'en'
                         ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg'
                         : 'text-text-secondary hover:text-text-primary hover:bg-white/20'
@@ -239,21 +239,21 @@ export const Header: React.FC = () => {
                 
                 <a 
                   href="#support"
-                  className="block py-2 font-medium text-text-primary hover:text-primary transition-colors"
+                  className="block py-2 font-medium text-text-primary hover:text-primary transition-colors duration-300 ease-in-out"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('nav.support')}
                 </a>
                 <a 
                   href="#about" 
-                  className="block text-text-secondary hover:text-primary transition-colors duration-200 py-2"
+                  className="block text-text-secondary hover:text-primary transition-colors duration-300 ease-in-out py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('nav.about')}
                 </a>
                 <a 
                   href="#articles" 
-                  className="block text-text-secondary hover:text-primary transition-colors duration-200 py-2"
+                  className="block text-text-secondary hover:text-primary transition-colors duration-300 ease-in-out py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('nav.articles')}
@@ -263,7 +263,7 @@ export const Header: React.FC = () => {
                     handleAuthAction();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full px-6 py-3 text-white rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg text-base flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/40 mt-4"
+                  className="w-full px-6 py-3 text-white rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg text-base flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/40 mt-4"
                 >
                   <span>{user ? t('logout') : t('login')}</span>
                 </button>

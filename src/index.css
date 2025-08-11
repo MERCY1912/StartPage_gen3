@@ -250,3 +250,18 @@ input, textarea {
 .animate-fly {
   animation: fly 10s linear infinite;
 }
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-slide-up {
+  animation: fadeInSlideUp 0.5s ease-out forwards;
+}
