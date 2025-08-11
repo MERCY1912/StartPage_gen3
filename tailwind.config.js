@@ -7,9 +7,9 @@ export default {
         'background': '#FDF8F5',
         'text-primary': '#333333',
         'text-secondary': '#888888',
-        'primary': '#D4A3A3',
-        'accent': '#E3B7A0',
-        'border': '#EAEAEA',
+        'primary': '#E4A596',
+        'accent': '#F0B2A3',
+        'border': '#E0D8D5',
       },
       screens: {
         'xs': '475px',
