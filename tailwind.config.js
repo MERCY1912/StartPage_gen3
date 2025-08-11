@@ -1,53 +1,43 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
-        'background': '#FFF5EE',
-        'text-primary': '#4E3B31',
-        'text-secondary': '#A1887F',
-        'primary': '#FFD1DC',
-        'accent': '#E0BBE4',
-        'secondary': '#FF7F50',
-        'border': '#EFE5DD',
-      },
-      screens: {
-        'xs': '475px',
+        'blush-pink': '#F1C4D6', // A soft, gentle pink
+        'warm-rose': '#D8A0A8', // A deeper, warmer pink
+        'cream': '#F9F1E9',     // A soft, creamy off-white
+        'lavender': '#E6E0F4',  // A light, airy lavender
+        'warm-brown': '#5D4037', // A rich, warm brown for text
       },
       fontFamily: {
-        'serif': ['"Playfair Display"', 'serif'],
-        'sans': ['"Montserrat"', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
+        sans: ['"Montserrat"', 'sans-serif'],
       },
       animation: {
-        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 3s ease-in-out infinite',
-        'gradient-x': 'gradient-x 3s ease infinite',
+        'fade-in': 'fadeIn 0.8s ease-out forwards',
+        'slide-up': 'slideUp 0.8s ease-out forwards',
+        'petal-fall': 'petalFall 15s linear infinite',
       },
       keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
         },
-        'gradient-x': {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center'
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center'
-          }
+        slideUp: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        petalFall: {
+          '0%': { transform: 'translateY(-10%)', opacity: 0 },
+          '10%': { opacity: 1 },
+          '100%': { transform: 'translateY(100vh) rotate(360deg)', opacity: 0.5 },
         }
       },
-      backdropBlur: {
-        xs: '2px',
-      },
-      boxShadow: {
-        'glow': '0 0 20px rgba(251, 194, 219, 0.4)',
-        'glow-purple': '0 0 20px rgba(197, 163, 255, 0.4)',
-      }
     },
   },
   plugins: [],
-};
+}

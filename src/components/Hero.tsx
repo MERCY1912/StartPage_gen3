@@ -1,21 +1,21 @@
-import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
-export const Hero: React.FC = () => {
-  const { t } = useLanguage();
-
+const Hero = () => {
   return (
-    <section className="relative z-10 px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8 text-center animate-fade-in-slide-up" style={{ animationDelay: '0.2s' }}>
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-text-primary mb-4 sm:mb-6 leading-[1.2]">
-          Для тебя. Каждый день.
-          <span className="block font-sans text-text-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-4">
-            Твой AI-ассистент: поддержка, вдохновение и забота о тебе каждый день.
-          </span>
-        </h1>
-
-        <p className="text-text-secondary mt-6">Начни свой день с вдохновения</p>
-      </div>
-    </section>
+    <motion.div
+      className="text-center text-warm-brown p-4"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
+      <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">
+        Ваш ИИ-стилист и толкователь снов
+      </h1>
+      <p className="text-lg md:text-xl font-sans leading-relaxed max-w-3xl mx-auto">
+        Получите персональные рекомендации по стилю, основанные на погоде, или узнайте тайны своих сновидений. Наш ИИ-помощник к вашим услугам.
+      </p>
+    </motion.div>
   );
 };
+
+export default Hero;
