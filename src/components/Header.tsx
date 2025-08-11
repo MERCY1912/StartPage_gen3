@@ -150,13 +150,13 @@ export const Header: React.FC = () => {
         </div>
         
         <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
-          <a href="#support" className="relative group font-medium text-text-primary hover:text-primary transition-colors">
+          <a href="#support" className="text-base text-text-secondary hover:text-text-primary transition-colors duration-200">
             {t('nav.support')}
           </a>
-          <a href="#about" className="text-text-secondary hover:text-primary transition-colors duration-200">
+          <a href="#about" className="text-base text-text-secondary hover:text-text-primary transition-colors duration-200">
             {t('nav.about')}
           </a>
-          <a href="#articles" className="text-text-secondary hover:text-primary transition-colors duration-200">
+          <a href="#articles" className="text-base text-text-secondary hover:text-text-primary transition-colors duration-200">
             {t('nav.articles')}
           </a>
           <button 
