@@ -11,6 +11,7 @@ import { CursorTrail } from './components/CursorTrail';
 import { CursorTracker } from './components/CursorTracker';
 import { FloatingEmojis } from './components/FloatingEmojis';
 import { BackgroundAccent } from './components/BackgroundAccent';
+import { NoiseBackground } from './components/NoiseBackground';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <AuthProvider>
         <div className="min-h-screen bg-background font-sans relative overflow-hidden">
           {/* Particle animation background */}
+          <NoiseBackground />
           <ParticleBackground />
           <WaveAnimation />
           <FloatingEmojis />
