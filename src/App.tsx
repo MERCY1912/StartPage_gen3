@@ -5,7 +5,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { InteractivePanel } from './components/InteractivePanel';
 import { Footer } from './components/Footer';
-import { ParticleBackground } from './components/ParticleBackground';
+import { FloatingPetals } from './components/FloatingPetals';
 import WaveAnimation from './components/WaveAnimation';
 import { CursorTrail } from './components/CursorTrail';
 import { CursorTracker } from './components/CursorTracker';
@@ -16,7 +16,7 @@ function App() {
       <AuthProvider>
         <div className="min-h-screen bg-gradient-to-br from-background to-secondary font-sans relative overflow-hidden">
           {/* Particle animation background */}
-          <ParticleBackground />
+          <FloatingPetals />
           <WaveAnimation />
           
           {/* Cursor trail effect */}
