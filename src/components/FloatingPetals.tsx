@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-interface Particle {
+interface Petal {
   x: number;
   y: number;
   size: number;
@@ -9,9 +9,9 @@ interface Particle {
   opacity: number;
 }
 
-export const ParticleBackground: React.FC = () => {
+export const FloatingPetals: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<Particle[]>([]);
+  const particlesRef = useRef<Petal[]>([]);
   const animationRef = useRef<number>();
 
   useEffect(() => {
@@ -27,40 +27,37 @@ export const ParticleBackground: React.FC = () => {
     };
 
     const createParticles = () => {
-      const particleCount = Math.min(30, window.innerWidth / 30); // Fewer, larger particles
+      const particleCount = 20; // A fixed number of petals
       particlesRef.current = [];
 
       for (let i = 0; i < particleCount; i++) {
         particlesRef.current.push({
           x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          size: Math.random() * 6 + 2, // Larger size for bokeh
-          speedX: (Math.random() - 0.5) * 0.1, // Slower speed
-          speedY: (Math.random() - 0.5) * 0.1, // Slower speed
-          opacity: Math.random() * 0.2 + 0.1, // Lower opacity
+          y: Math.random() * canvas.height, // Start at random y positions
+          size: Math.random() * 15 + 10, // Font size for emoji
+          speedX: (Math.random() - 0.5) * 0.5, // Sideways drift
+          speedY: Math.random() * 0.5 + 0.2, // Downward speed
+          opacity: Math.random() * 0.5 + 0.3, // Opacity
         });
       }
     };
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.filter = 'blur(3px)'; // Add blur for bokeh effect
 
-      particlesRef.current.forEach((particle) => {
-        particle.x += particle.speedX;
-        particle.y += particle.speedY;
+      particlesRef.current.forEach((petal) => {
+        petal.x += petal.speedX;
+        petal.y += petal.speedY;
 
-        if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
+        // Reset petal to the top when it goes off the bottom
+        if (petal.y > canvas.height) {
+          petal.y = -petal.size;
+          petal.x = Math.random() * canvas.width;
+        }
 
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        // New pastel colors from the theme
-        const colors = ['228, 165, 150', '240, 178, 163', '242, 200, 162'];
-        const colorIndex = Math.floor(particle.x / (canvas.width / 3));
-        const color = colors[Math.min(colorIndex, colors.length - 1)];
-        ctx.fillStyle = `rgba(${color}, ${particle.opacity})`;
-        ctx.fill();
+        ctx.globalAlpha = petal.opacity;
+        ctx.font = `${petal.size}px serif`;
+        ctx.fillText('🌸', petal.x, petal.y);
       });
 
       animationRef.current = requestAnimationFrame(animate);
