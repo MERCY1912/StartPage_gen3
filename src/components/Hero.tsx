@@ -5,7 +5,7 @@ export const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative z-10 px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8 text-center">
+    <section className="relative z-10 px-4 py-16 sm:py-20 lg:py-24 sm:px-6 lg:px-8 text-center">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-text-primary mb-4 sm:mb-6 leading-[1.2]">
           Для тебя. Каждый день.
